@@ -12,6 +12,70 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Mobile responsive header adjustments */
+    @media (max-width: 768px) {
+      .header__text-box {
+        padding: 0 10px;
+      }
+      .header__photo-container {
+        top: 10px;
+        right: 10px;
+      }
+      .header__social-links {
+        bottom: 10px;
+        right: 10px;
+      }
+      .nav__items {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .nav__item {
+        margin: 5px;
+      }
+    }
+    
+    /* Ensure consistent image dimensions */
+    .image-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
+    }
+    
+    .work__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+    
+    /* Mobile hover effect */
+    @media (hover: none) {
+      .image-container:active .work__image.gif-overlay {
+        opacity: 1;
+      }
+    }
+    
+    /* Add this script to enable GIF on hover for both desktop and mobile */
+    .gif-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .image-container:hover .gif-overlay {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -63,167 +127,7 @@
       <div class="row">
         <h2>My <span class="text-accent">Portfolio</span></h2>
         <div class="work__boxes">
-          <!-- Project 1 - Toys Brawl -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Toys Brawl | <span class="text-highlight">3D Co-op Physics Shooter</span></h3>
-              <p>
-                Toys Brawl is a 3D local co-op, physics-based shooter with rogue-lite elements developed in Unity. In this project, I:
-              </p>
-              <ul class="work__list">
-                <li>Implemented ragdoll character movements and intuitive physics controls</li>
-                <li>Developed diverse weapon systems with unique interactions</li>
-                <li>Created damage mechanics for both dealing and receiving damage</li>
-                <li>Designed player upgrade systems that enhance gameplay progression</li>
-                <li>Crafted UI/UX elements for seamless player experience</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">Physics System</span>
-                <span class="skill-tag">Game Mechanics</span>
-                <span class="skill-tag">UI/UX Design</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://store.playstation.com/en-tr/concept/10012882/" target="_blank" class="link__text">
-                  Visit PlayStation Store <span>&rarr;</span>
-                </a>
-                <a href="https://store.playstation.com/en-tr/concept/10012882/" title="Visit PlayStation Store" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="PlayStation Store">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://store.playstation.com/en-tr/concept/10012882/" target="_blank">
-                <div class="image-container">
-                  <img src="./images/toys-brawl.jpg" data-hover="./images/toys-brawl.gif" class="work__image" alt="Toys Brawl" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 2 - Shahmaran -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Shahmaran | <span class="text-highlight">Hyper-casual Action Game</span></h3>
-              <p>
-                Shahmaran is a hyper-casual video game developed at AnkA Interactive. As a C++ Unreal Engine Game Developer on this project, I contributed to:
-              </p>
-              <ul class="work__list">
-                <li>Implementing core game mechanics and gameplay systems</li>
-                <li>Programming the graphical user interface for intuitive player interaction</li>
-                <li>Integrating sound systems to enhance the gaming experience</li>
-                <li>Adapting the game for MacOS and iOS platforms for wider accessibility</li>
-                <li>Optimizing performance for mobile devices</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Unreal Engine</span>
-                <span class="skill-tag">Game Mechanics</span>
-                <span class="skill-tag">GUI Design</span>
-                <span class="skill-tag">Mobile Integration</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank" class="link__text">
-                  Visit Steam Page <span>&rarr;</span>
-                </a>
-                <a href="https://store.steampowered.com/app/3061480/Shahmaran/" title="Visit Steam" target="_blank">
-                  <img src="./images/steam.svg" class="work__code" alt="Steam">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank">
-                <div class="image-container">
-                  <img src="./images/shahmaran.jpg" data-hover="./images/shahmaran.gif" class="work__image" alt="Shahmaran Game" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 3 - Revenge: The Dagger -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Revenge: The Dagger | <span class="text-highlight">Side Scroller Action Adventure</span></h3>
-              <p>
-                Developed as my university thesis project, Revenge: The Dagger is a side-scrolling puzzle game built in Unreal Engine. For this project, I:
-              </p>
-              <ul class="work__list">
-                <li>Handled comprehensive level design with interactive environments</li>
-                <li>Implemented traps, puzzles, and combat systems including firearms</li>
-                <li>Created dialogue systems to enhance narrative elements</li>
-                <li>Integrated image processing techniques for visual feedback</li>
-                <li>Designed core gameplay mechanics and player interaction systems</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unreal Engine</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Blueprint</span>
-                <span class="skill-tag">Image Processing</span>
-                <span class="skill-tag">Level Design</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank" class="link__text">
-                  Play on Itch.io <span>&rarr;</span>
-                </a>
-                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" title="Play on Itch.io" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="Itch.io">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank">
-                <div class="image-container">
-                  <img src="./images/revenge-the-dagger.jpg" data-hover="./images/revenge-the-dagger.gif" class="work__image" alt="Revenge Game" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 4 - Evil Magic Arena -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Evil Magic Arena | <span class="text-highlight">2D Multiplayer Game</span></h3>
-              <p>
-                Evil Magic Arena is a 2D multiplayer game developed in Unity with cloud integration. My contributions include:
-              </p>
-              <ul class="work__list">
-                <li>Integrating AWS for comprehensive data management</li>
-                <li>Implementing user registration and login systems for account security</li>
-                <li>Designing public and private messaging features for player interaction</li>
-                <li>Creating a robust friend-adding system for social gameplay</li>
-                <li>Developing interactive panels and handling user data updates after game events</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Multiplayer</span>
-                <span class="skill-tag">User Systems</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://www.evilwizards.xyz" target="_blank" class="link__text">
-                  Visit Website <span>&rarr;</span>
-                </a>
-                <a href="https://www.evilwizards.xyz" title="Visit Website" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="Website">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://www.evilwizards.xyz" target="_blank">
-                <div class="image-container">
-                  <img src="./images/evil-magic-arena.jpg" data-hover="./images/evil-magic-arena.gif" class="work__image" alt="Evil Magic Arena" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 5 - Rust & Roots -->
+          <!-- Project 1 - Rust & Roots (Reordered) -->
           <div class="work__box">
             <div class="work__text">
               <h3>Rust & Roots | <span class="text-highlight">Strategic Top-Down Shooter</span></h3>
@@ -257,93 +161,137 @@
             <div class="work__image-box">
               <a href="https://store.steampowered.com/app/3445360/Rust__Roots/?l=turkish" target="_blank">
                 <div class="image-container">
-                  <img src="./images/rust-and-roots.jpg" data-hover="./images/rust-and-roots.gif" class="work__image" alt="Rust & Roots" />
+                  <img src="./images/rust-and-roots.jpg" class="work__image" alt="Rust & Roots">
+                  <img src="./images/rust-and-roots.gif" class="work__image gif-overlay" alt="Rust & Roots Animation">
                 </div>
               </a>
             </div>
           </div>
-
-          <!-- Project 6 - Catpocalypse -->
+          
+          <!-- Project 2 - Evil Magic Arena (Reordered) -->
           <div class="work__box">
             <div class="work__text">
-              <h3>Catpocalypse | <span class="text-highlight">Mobile Hyper-casual Game</span></h3>
+              <h3>Evil Magic Arena | <span class="text-highlight">2D Multiplayer Game</span></h3>
               <p>
-                Catpocalypse is a mobile hyper-casual game with rogue-lite mechanics and an endless loop structure. For this project, I:
+                Evil Magic Arena is a 2D multiplayer game developed in Unity with cloud integration. My contributions include:
               </p>
               <ul class="work__list">
-                <li>Developed original assets for a unique gaming experience</li>
-                <li>Designed customizable features that enhance player engagement</li>
-                <li>Created an endless loop structure for extended gameplay</li>
-                <li>Implemented rogue-lite mechanics for progression</li>
-                <li>Optimized performance for mobile platforms</li>
+                <li>Integrating AWS for comprehensive data management</li>
+                <li>Implementing user registration and login systems for account security</li>
+                <li>Designing public and private messaging features for player interaction</li>
+                <li>Creating a robust friend-adding system for social gameplay</li>
+                <li>Developing interactive panels and handling user data updates after game events</li>
               </ul>
               <div class="skills-container">
                 <span class="skill-tag">Unity</span>
                 <span class="skill-tag">C#</span>
-                <span class="skill-tag">Mobile Development</span>
-                <span class="skill-tag">Game Design</span>
-                <span class="skill-tag">Asset Creation</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Multiplayer</span>
+                <span class="skill-tag">User Systems</span>
               </div>
 
               <div class="work__links">
-                <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank" class="link__text">
+                <a href="https://www.evilwizards.xyz" target="_blank" class="link__text">
+                  Visit Website <span>&rarr;</span>
+                </a>
+                <a href="https://www.evilwizards.xyz" title="Visit Website" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="Website">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <a href="https://www.evilwizards.xyz" target="_blank">
+                <div class="image-container">
+                  <img src="./images/evil-magic-arena.jpg" class="work__image" alt="Evil Magic Arena">
+                  <img src="./images/evil-magic-arena.gif" class="work__image gif-overlay" alt="Evil Magic Arena Animation">
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project 3 - Revenge: The Dagger (Reordered) -->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Revenge: The Dagger | <span class="text-highlight">Side Scroller Action Adventure</span></h3>
+              <p>
+                Developed as my university thesis project, Revenge: The Dagger is a side-scrolling puzzle game built in Unreal Engine. For this project, I:
+              </p>
+              <ul class="work__list">
+                <li>Handled comprehensive level design with interactive environments</li>
+                <li>Implemented traps, puzzles, and combat systems including firearms</li>
+                <li>Created dialogue systems to enhance narrative elements</li>
+                <li>Integrated image processing techniques for visual feedback</li>
+                <li>Designed core gameplay mechanics and player interaction systems</li>
+              </ul>
+              <div class="skills-container">
+                <span class="skill-tag">Unreal Engine</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Blueprint</span>
+                <span class="skill-tag">Image Processing</span>
+                <span class="skill-tag">Level Design</span>
+              </div>
+
+              <div class="work__links">
+                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank" class="link__text">
                   Play on Itch.io <span>&rarr;</span>
                 </a>
-                <a href="https://hbrahimozdemir.itch.io/catpocalypse" title="Play on Itch.io" target="_blank">
+                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" title="Play on Itch.io" target="_blank">
                   <img src="./images/github.svg" class="work__code" alt="Itch.io">
                 </a>
               </div>
             </div>
             <div class="work__image-box">
-              <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank">
+              <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank">
                 <div class="image-container">
-                  <img src="./images/catpocalypse1.jpg" data-hover="./images/catpocalypse1.gif" class="work__image" alt="Catpocalypse" />
+                  <img src="./images/revenge-the-dagger.jpg" class="work__image" alt="Revenge Game">
+                  <img src="./images/revenge-the-dagger.gif" class="work__image gif-overlay" alt="Revenge Game Animation">
                 </div>
               </a>
             </div>
           </div>
-
-          <!-- Project 7 - Ekocin -->
+          
+          <!-- Project 4 - Toys Brawl (Reordered) -->
           <div class="work__box">
             <div class="work__text">
-              <h3>Ekocin | <span class="text-highlight">Educational Environmental Game</span></h3>
+              <h3>Toys Brawl | <span class="text-highlight">3D Co-op Physics Shooter</span></h3>
               <p>
-                Ekocin is an educational game developed for middle school students as part of a TÜBİTAK project at Bolu Abant İzzet Baysal University. For this collaborative project, I:
+                Toys Brawl is a 3D local co-op, physics-based shooter with rogue-lite elements developed in Unity. In this project, I:
               </p>
               <ul class="work__list">
-                <li>Implemented comprehensive game mechanics focused on environmental education</li>
-                <li>Developed using Unity with an emphasis on educational content</li>
-                <li>Created a Node.js and MongoDB connection system for data tracking</li>
-                <li>Designed features enabling teachers to monitor student progress</li>
-                <li>Focused on sustainability concepts and environmental conservation</li>
+                <li>Implemented ragdoll character movements and intuitive physics controls</li>
+                <li>Developed diverse weapon systems with unique interactions</li>
+                <li>Created damage mechanics for both dealing and receiving damage</li>
+                <li>Designed player upgrade systems that enhance gameplay progression</li>
+                <li>Crafted UI/UX elements for seamless player experience</li>
               </ul>
               <div class="skills-container">
                 <span class="skill-tag">Unity</span>
                 <span class="skill-tag">C#</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">Educational Design</span>
+                <span class="skill-tag">Physics System</span>
+                <span class="skill-tag">Game Mechanics</span>
+                <span class="skill-tag">UI/UX Design</span>
               </div>
 
               <div class="work__links">
-                <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" target="_blank" class="link__text">
-                  Play on Unity Play <span>&rarr;</span>
+                <a href="https://store.playstation.com/en-tr/concept/10012882/" target="_blank" class="link__text">
+                  Visit PlayStation Store <span>&rarr;</span>
                 </a>
-                <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" title="Play on Unity Play" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="Unity Play">
+                <a href="https://store.playstation.com/en-tr/concept/10012882/" title="Visit PlayStation Store" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="PlayStation Store">
                 </a>
               </div>
             </div>
             <div class="work__image-box">
-              <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" target="_blank">
+              <a href="https://store.playstation.com/en-tr/concept/10012882/" target="_blank">
                 <div class="image-container">
-                  <img src="./images/ekocin.jpg" data-hover="./images/ekocin.gif" class="work__image" alt="Ekocin" />
+                  <img src="./images/toys-brawl.jpg" class="work__image" alt="Toys Brawl">
+                  <img src="./images/toys-brawl.gif" class="work__image gif-overlay" alt="Toys Brawl Animation">
                 </div>
               </a>
             </div>
           </div>
-
-          <!-- Project 8 - Tiny Siege -->
+          
+          <!-- Project 5 - Tiny Siege (Reordered) -->
           <div class="work__box">
             <div class="work__text">
               <h3>Tiny Siege | <span class="text-highlight">2D RTS Mobile Game</span></h3>
@@ -377,11 +325,136 @@
             <div class="work__image-box">
               <a href="https://play.unity.com/en/games/b148d828-951a-4a49-b6a5-adbd6510f110/webgl2" target="_blank">
                 <div class="image-container">
-                  <img src="./images/tiny-siege.jpg" data-hover="./images/tiny-siege.gif" class="work__image" alt="Tiny Siege" />
+                  <img src="./images/tiny-siege.jpg" class="work__image" alt="Tiny Siege">
+                  <img src="./images/tiny-siege.gif" class="work__image gif-overlay" alt="Tiny Siege Animation">
                 </div>
               </a>
             </div>
           </div>
+          
+          <!-- Project 6 - Shahmaran (Reordered) -->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Shahmaran | <span class="text-highlight">Hyper-casual Action Game</span></h3>
+              <p>
+                Shahmaran is a hyper-casual video game developed at AnkA Interactive. As a C++ Unreal Engine Game Developer on this project, I contributed to:
+              </p>
+              <ul class="work__list">
+                <li>Implementing core game mechanics and gameplay systems</li>
+                <li>Programming the graphical user interface for intuitive player interaction</li>
+                <li>Integrating sound systems to enhance the gaming experience</li>
+                <li>Adapting the game for MacOS and iOS platforms for wider accessibility</li>
+                <li>Optimizing performance for mobile devices</li>
+              </ul>
+              <div class="skills-container">
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Unreal Engine</span>
+                <span class="skill-tag">Game Mechanics</span>
+                <span class="skill-tag">GUI Design</span>
+                <span class="skill-tag">Mobile Integration</span>
+              </div>
+
+              <div class="work__links">
+                <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank" class="link__text">
+                  Visit Steam Page <span>&rarr;</span>
+                </a>
+                <a href="https://store.steampowered.com/app/3061480/Shahmaran/" title="Visit Steam" target="_blank">
+                  <img src="./images/steam.svg" class="work__code" alt="Steam">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank">
+                <div class="image-container">
+                  <img src="./images/shahmaran.jpg" class="work__image" alt="Shahmaran Game">
+                  <img src="./images/shahmaran.gif" class="work__image gif-overlay" alt="Shahmaran Game Animation">
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project 7 - Catpocalypse (Reordered) -->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Catpocalypse | <span class="text-highlight">Mobile Hyper-casual Game</span></h3>
+              <p>
+                Catpocalypse is a mobile hyper-casual game with rogue-lite mechanics and an endless loop structure. For this project, I:
+              </p>
+              <ul class="work__list">
+                <li>Developed original assets for a unique gaming experience</li>
+                <li>Designed customizable features that enhance player engagement</li>
+                <li>Created an endless loop structure for extended gameplay</li>
+                <li>Implemented rogue-lite mechanics for progression</li>
+                <li>Optimized performance for mobile platforms</li>
+              </ul>
+              <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Mobile Development</span>
+                <span class="skill-tag">Game Design</span>
+                <span class="skill-tag">Asset Creation</span>
+              </div>
+
+              <div class="work__links">
+                <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank" class="link__text">
+                  Play on Itch.io <span>&rarr;</span>
+                </a>
+                <a href="https://hbrahimozdemir.itch.io/catpocalypse" title="Play on Itch.io" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="Itch.io">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank">
+                <div class="image-container">
+                  <img src="./images/catpocalypse1.jpg" class="work__image" alt="Catpocalypse">
+                  <img src="./images/catpocalypse1.gif" class="work__image gif-overlay" alt="Catpocalypse Animation">
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project 8 - Ekocin (Reordered) -->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Ekocin | <span class="text-highlight">Educational Environmental Game</span></h3>
+              <p>
+                Ekocin is an educational game developed for middle school students as part of a TÜBİTAK project at Bolu Abant İzzet Baysal University. For this collaborative project, I:
+              </p>
+              <ul class="work__list">
+                <li>Implemented comprehensive game mechanics focused on environmental education</li>
+                <li>Developed using Unity with an emphasis on educational content</li>
+                <li>Created a Node.js and MongoDB connection system for data tracking</li>
+                <li>Designed features enabling teachers to monitor student progress</li>
+                <li>Focused on sustainability concepts and environmental conservation</li>
+              </ul>
+              <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Educational Design</span>
+              </div>
+
+              <div class="work__links">
+                <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" target="_blank" class="link__text">
+                  Play on Unity Play <span>&rarr;</span>
+                </a>
+                <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" title="Play on Unity Play" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="Unity Play">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" target="_blank">
+                <div class="image-container">
+                  <img src="./images/ekocin.jpg" class="work__image" alt="Ekocin">
+                  <img src="./images/ekocin.gif" class="work__image gif-overlay" alt="Ekocin Animation">
+                </div>
+              </a>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -471,5 +544,38 @@
   </footer>
 
   <script src="index.js"></script>
+  <script>
+    // Update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Add touch support for mobile devices
+    document.addEventListener('DOMContentLoaded', function() {
+      // Function to handle mobile touch for showing GIFs
+      function handleTouch() {
+        const containers = document.querySelectorAll('.image-container');
+        
+        containers.forEach(container => {
+          container.addEventListener('touchstart', function() {
+            const gifOverlay = this.querySelector('.gif-overlay');
+            if (gifOverlay) {
+              gifOverlay.style.opacity = "1";
+            }
+          }, { passive: true });
+          
+          container.addEventListener('touchend', function() {
+            const gifOverlay = this.querySelector('.gif-overlay');
+            if (gifOverlay) {
+              // Small delay before hiding to make sure it's visible on tap
+              setTimeout(() => {
+                gifOverlay.style.opacity = "0";
+              }, 1500);
+            }
+          }, { passive: true });
+        });
+      }
+      
+      handleTouch();
+    });
+  </script>
 </body>
 </html>
