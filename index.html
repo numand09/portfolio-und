@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/halil-ibrahim-ozdemir.png" />
+
+  <!-- Put your site title here -->
+  <title>
+   Halil İbrahim Özdemir Portfolio Site
+  </title>
+
+  <meta name="description" content="Computer Engineer | Game Developer ">
+  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
+  <meta name="keywords" content="C,C++,C#,Unreal Engine, Blueprint, Unity, Windows,Linux" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ***** Header ***** -->
+
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="#clients" class="nav__link">Companies</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+          <!-- Replace the following name with your name -->
+          <span>Halil İbrahim Özdemir</span>
+        </h1>
+        <!-- Put a small paragraph about yourself -->
+        <p>Computer Engineer - Game Developer </p>
+        <a href="#contact" class="btn btn--pink">Get in touch</a>
+      </div>
+    </div>
+     <!-- Hovered Profile Photo on Header Section -->
+  <div class="header__photo-container">
+    <a href="./files/halil-ibrahim-ozdemir-resume.pdf" target="_blank">
+      <img src="./images/halil-ibrahim-ozdemir.png" class="header__photo-small hover-effect" alt="Resume Link">
+    </a>
+  </div>
+
+  <!-- GitHub and LinkedIn logos -->
+  <div class="header__social-links">
+    <a href="https://github.com/hbrahimozdemir" target="_blank" title="GitHub">
+      <img src="./images/github.svg" class="header__social-icon" alt="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/halil-ibrahim-özdemir-280542223/" target="_blank" title="LinkedIn">
+      <img src="./images/linkedin.svg" class="header__social-icon" alt="LinkedIn">
+    </a>
+  </div>
+  </header>
+
+  <main role="main">
+
+    <!-- ***** Work ***** -->
+
+    <section class="work" id="work">
+      <div class="row">
+        <h2>My Portfolio</h2>
+        <div class="work__boxes">
+
+          <!-- Each div with the work__box class is a project. -->
+<div class="work__box">
+  <div class="work__text">
+    <h3>Catpocalypse | Hyper-casual 2D Game</h3>
+    <p>
+      Catpocalypse is a hyper-casual 2D endless runner game developed as a personal project for mobile platforms. In this
+      project, I:
+    </p>
+    <ul class="work__list">
+      <li>Designed and implemented core game mechanics.</li>
+      <li>Developed intuitive UI and integrated sound systems to enhance player engagement.</li>
+      <li>Created the game's overall design, ensuring a fun and replayable experience.</li>
+      <li>Utilized Unity and C# to bring the project to life.</li>
+    </ul>
+    <ul class="work__list">
+      <p>Skills:</p>
+      <p>Unity | C# | Game Mechanics Programming | UI Design | Sound Integration | Game Design</p>
+    </ul>
+
+    <div class="work__links">
+      <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank" class="link__text">
+        Visit Site <span>&rarr;</span>
+      </a>
+      <a href="https://hbrahimozdemir.itch.io/catpocalypse" title="Visit Site" target="_blank">
+        <img src="./images/itch-io.svg" class="work__code" alt="Steam">
+      </a>
+    </div>
+  </div>
+  <div class="work__image-box">
+    <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank">
+      <img 
+        src="./images/Catpocalypse.jpg" 
+        data-hover="./images/Catpocalypse.gif" 
+        class="work__image" 
+        alt="Catpocalypse" />
+    </a>
+  </div>
+</div>
+          <div class="work__box">
+  <div class="work__text">
+    <h3 style="white-space: nowrap;">Shahmaran | Hyper-casual Action Game</h3>
+    <p>
+      Shahmaran is a Hyper-casual game offering simple yet addictive gameplay. In this project, I designed the game mechanics, implemented GUI and sound integrations, and managed the process of integrating the game into mobile platforms.
+    <ul class="work__list">
+      <li>C++</li>
+      <li>Unreal Engine</li>
+      <li>Game Mechanics</li>
+      <li>Game Design</li>
+      <li>Mobile Integration</li>
+    </ul>
+
+    <div class="work__links">
+      <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank" class="link__text">
+        Visit Site <span>&rarr;</span>
+      </a>
+      <a href="https://store.steampowered.com/app/3061480/Shahmaran/" title="Visit Site" target="_blank">
+        <img src="./images/steam.svg" class="work__code" alt="Steam">
+      </a>
+    </div>
+  </div>
+  <div class="work__image-box">
+    <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank">
+      <img 
+        src="./images/shahmaran.jpg" 
+        data-hover="./images/catpocalypse.gif" 
+        class="work__image" 
+        alt="Catpocalypse Game" />
+    </a>
+  </div>  
+</div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Revenge : The Dagger  | Side Scroller Action Adventure Game </h3>
+              <p>
+                Developed and programmed Revenge: The Dagger, a side-scrolling puzzle game for a university thesis. Led the game's programming efforts, including mechanics, UI, and overall gameplay design, demonstrating strong problem-solving and coding skills
+              </p>
+              <ul class="work__list">
+                <li>Unreal Engine C++ and Blueprint Game Development</li>
+                <li>Game Mechanics</li>
+                <li>Gameplay Design</li>
+                <li>Level Design</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://hbrahimozdemir.itch.io/revengedaggergame">
+                  <img src="./images/itch-io.svg" class="work__code" title="Visit Site" alt="Itchio">
+                </a>
+              </div>
+            </div>
+              <div class="work__image-box">
+                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank">
+                  <img 
+                    src="./images/revenge2.png" 
+                    data-hover="./images/catpocalypse.gif" 
+                    class="work__image" 
+                    alt="Catpocalypse Game" />
+                </a>
+              </div> 
+            </div>
+          </div>
+        </section>
+          
+    <!-- ***** Clients ***** -->
+
+    <section class="client" id="clients">
+      <div class="row">
+        <h2><h2>Companies I've Worked For</h2></h2>
+        <div class="client__logos">
+          <!-- Add logos of the clients or companies you'have worked with. -->
+          <img src="./images/anka.png" class="client__logo" alt="Company 2" />
+          <img src="./images/roketsan.png" class="client__logo" alt="Company 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** About ***** -->
+
+    <section class="about" id="about">
+      <div class="row">
+        <h2>About Me</h2>
+        <div class="about__content">
+          <div class="about__text">
+            <p>
+              I am a passionate Game Developer with a strong foundation in software engineering and game development. My journey began with a degree in Computer Engineering, leading to roles in IT infrastructure at ROKETSAN and game development at AnkA Interactive. I contributed to projects like <em>Shahmaran</em> and <em>Revenge: The Dagger</em> while honing my skills in C++, Unreal Engine, and Unity.
+            </p>
+            <p>
+              Through personal projects such as <em>Catpocalypse</em>, I have further developed expertise in game mechanics, UI design, and mobile optimization.
+            </p>
+            <!-- Provide a link to your resume -->
+            <a href="./files/halil-ibrahim-ozdemir-resume.pdf" class="btn" target="_blank">My Resume</a>
+
+          </div>
+
+          <div class="about__photo-container">
+            <!-- Add a nice photo of yourself -->
+            <img class="about__photo" src="./images/halil-ibrahim-ozdemir.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ***** Contact ***** -->
+
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Get in Touch</h2>
+      <div class="contact__info">
+        <p>
+          If you have any questions, project inquiries, or just want to connect, feel free to reach out. I'm always open to new opportunities and collaborations. You can contact me via email or connect with me on social media. I look forward to hearing from you!
+
+        </p>
+        <!-- Replace the email with yours -->
+        <a href="mailto:hbrahim.ozdemir@gmail.com" class="btn">hbrahim.ozdemir@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ***** Footer ***** -->
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://github.com/hbrahimozdemir" title="Link to GitHub Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="GitHub">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/halil-ibrahim-özdemir-280542223/" title="Link to LinkedIn Profile">
+            <img src="./images/linkedin.svg" class="footer__social-image" alt="LinkedIn">
+          </a>
+        </li>
+      </ul>
+  
+      <p>
+        &copy; <span id="year"></span> <a href="https://www.linkedin.com/in/halil-ibrahim-özdemir-280542223/" class="link">Halil İbrahim Özdemir</a>. All rights reserved.
+      </p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+  </body>
+  </html>
+  
