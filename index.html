@@ -8,562 +8,1186 @@
   <title>Umit Numan Duman | Game Developer</title>
   <meta name="description" content="Computer Engineer | Game Developer">
   <meta name="keywords" content="C, C++, C#, Unreal Engine, Blueprint, Unity, Game Development, Godot" />
-  <link rel="stylesheet" href="index.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* Mobile responsive header adjustments */
-    @media (max-width: 768px) {
-      .header__text-box {
-        padding: 0 10px;
-      }
-      .header__social-links {
-        bottom: 10px;
-        right: 10px;
-      }
-      .nav__items {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .nav__item {
-        margin: 5px;
-      }
+    :root {
+      --primary-color: #6A4DFF;
+      --secondary-color: #FF4D94;
+      --accent-color: #4DFFE1;
+      --dark-bg: #1A1A2E;
+      --light-bg: #f5f5f7;
+      --text-color: #16213E;
+      --light-text: #ffffff;
+      --card-bg: #ffffff;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --gradient-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      --skill-gradient: linear-gradient(135deg, #6A4DFF, #4DFFE1);
     }
-    
-    /* Ensure consistent image dimensions */
-    .image-container {
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
       position: relative;
+      padding-bottom: 1rem;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8rem;
+      height: 0.4rem;
+      background: var(--gradient-bg);
+      border-radius: 2rem;
+    }
+
+    h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding-top: 56.25%; /* 16:9 aspect ratio */
+      background: rgba(26, 26, 46, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      padding: 1rem 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--light-text);
+    }
+
+    .logo span {
+      color: var(--accent-color);
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--light-text);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 2.4rem;
+      color: var(--light-text);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: var(--dark-bg);
+      display: flex;
+      align-items: center;
+      position: relative;
       overflow: hidden;
     }
-    
-    .work__image {
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(106, 77, 255, 0.3), rgba(255, 77, 148, 0.3));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--light-text);
+      max-width: 60rem;
+    }
+
+    .hero-subtitle {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .text-highlight {
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+
+    .text-accent {
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      border-radius: 5rem;
+      font-weight: 500;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+      background: var(--gradient-bg);
+      color: var(--light-text);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-color);
+      color: var(--light-text);
+      transform: translateY(-3px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .social-link {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .social-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: var(--light-text);
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      padding: 10rem 0;
+      background-color: var(--light-bg);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+      gap: 3rem;
+    }
+
+    .portfolio-card {
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-img-container {
+      position: relative;
+      overflow: hidden;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .portfolio-img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .portfolio-img-overlay {
+      opacity: 0;
       transition: opacity 0.3s ease;
     }
-    
-    /* Mobile hover effect */
-    @media (hover: none) {
-      .image-container:active .work__image.gif-overlay {
+
+    .portfolio-img-container:hover .portfolio-img-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-content {
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-title {
+      color: var(--dark-bg);
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-subtitle {
+      color: var(--primary-color);
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .portfolio-desc {
+      margin-bottom: 2rem;
+      color: #666;
+      font-size: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-tag {
+      padding: 0.5rem 1.5rem;
+      background: var(--skill-gradient);
+      color: var(--light-text);
+      border-radius: 3rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .portfolio-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-link:hover {
+      color: var(--secondary-color);
+      transform: translateX(5px);
+    }
+
+    .portfolio-link-icon {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    /* Companies Section */
+    .companies {
+      padding: 8rem 0;
+      background: var(--dark-bg);
+      color: var(--light-text);
+    }
+
+    .companies h2 {
+      color: var(--light-text);
+    }
+
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 4rem;
+      justify-content: center;
+    }
+
+    .company-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .company-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .company-logo {
+      width: 12rem;
+      height: 12rem;
+      margin: 0 auto 2rem;
+      object-fit: contain;
+    }
+
+    .company-name {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    /* About Section */
+    .about {
+      padding: 10rem 0;
+      background-color: var(--light-bg);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text {
+      font-size: 1.7rem;
+    }
+
+    .about-img-container {
+      text-align: center;
+    }
+
+    .about-img {
+      width: 25rem;
+      height: 25rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.5rem solid var(--accent-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 8rem 0;
+      background: var(--gradient-bg);
+      color: var(--light-text);
+    }
+
+    .contact h2 {
+      color: var(--light-text);
+    }
+
+    .contact-content {
+      text-align: center;
+      max-width: 70rem;
+      margin: 0 auto;
+    }
+
+    .contact-text {
+      margin-bottom: 3rem;
+      font-size: 1.8rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 4rem 0;
+      background: var(--dark-bg);
+      color: var(--light-text);
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 3rem;
+      right: 3rem;
+      width: 5rem;
+      height: 5rem;
+      background: var(--primary-color);
+      color: var(--light-text);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--secondary-color);
+      transform: translateY(-5px);
+    }
+
+    .back-to-top-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: var(--light-text);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
         opacity: 1;
+        transform: translateY(0);
       }
     }
-    
-    /* Add this script to enable GIF on hover for both desktop and mobile */
-    .gif-overlay {
+
+    .fade-in {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      html {
+        font-size: 55%;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-img-container {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html {
+        font-size: 50%;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-list {
+        position: fixed;
+        top: 7rem;
+        left: 0;
+        width: 100%;
+        background: var(--dark-bg);
+        padding: 2rem 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+
+      .nav-list.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-content {
+        text-align: center;
+        padding: 0 2rem;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Particle animation */
+    .particles {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      overflow: hidden;
     }
-    
-    .image-container:hover .gif-overlay {
-      opacity: 1;
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Project gallery scroll effect */
+    .portfolio-scroll {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 2rem 0;
+    }
+
+    .portfolio-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .portfolio-scroll .portfolio-grid {
+      display: flex;
+      min-width: min-content;
+      gap: 2rem;
+    }
+
+    .portfolio-scroll .portfolio-card {
+      min-width: 30rem;
+      scroll-snap-align: start;
+    }
+
+    /* Animated border */
+    .animated-border {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+
+    .animated-border::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
+      z-index: -1;
+      animation: borderAnimation 6s linear infinite;
+      background-size: 400%;
+      border-radius: 1.7rem;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- ***** Header ***** -->
-  <header class="header" role="banner" id="top">
-    <div class="header__overlay"></div>
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Portfolio</a></li>
-          <li class="nav__item"><a href="#clients" class="nav__link">Companies</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">Ümit<span>Duman</span></a>
+      <ul class="nav-list">
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#companies" class="nav-link">Companies</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn">☰</button>
     </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-          <span>Ümit Numan Duman</span>
-        </h1>
-        <p><span class="text-highlight">Computer Engineer</span> - <span class="text-accent">Game Developer</span></p>
-        <a href="#contact" class="btn btn--primary">Get in touch</a>
-      </div>
-    </div>
+  </nav>
 
-    <!-- GitHub and LinkedIn logos -->
-    <div class="header__social-links">
-      <a href="https://github.com/numand09" target="_blank" title="GitHub" class="social-icon-link">
-        <img src="./images/github.svg" class="header__social-icon" alt="GitHub">
-      </a>
-      <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" target="_blank" title="LinkedIn" class="social-icon-link">
-        <img src="./images/linkedin.svg" class="header__social-icon" alt="LinkedIn">
-      </a>
-    </div>
-  </header>
-
-  <main role="main">
-    <!-- ***** Work ***** -->
-    <section class="work" id="work">
-      <div class="row">
-        <h2>My <span class="text-accent">Portfolio</span></h2>
-        <div class="work__boxes">
-          <!-- Project 1 - Rust & Roots (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Rust & Roots | <span class="text-highlight">Strategic Top-Down Shooter</span></h3>
-              <p>
-                Rust & Roots is a dark, strategic top-down shooter set in a post-apocalyptic world. My key contributions were:
-              </p>
-              <ul class="work__list">
-                <li>Designing intelligent enemy and NPC AI behaviors</li>
-                <li>Implementing UI/UX features for seamless player interaction</li>
-                <li>Creating character and enemy animations that enhance gameplay</li>
-                <li>Developing drone and clairvoyance mechanics for strategic depth</li>
-                <li>Handling level transitions and mission matching for game progression</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">AI Systems</span>
-                <span class="skill-tag">Animation</span>
-                <span class="skill-tag">Game Design</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://store.steampowered.com/app/3445360/Rust__Roots/?l=turkish" target="_blank" class="link__text">
-                  Visit Steam Page <span>&rarr;</span>
-                </a>
-                <a href="https://store.steampowered.com/app/3445360/Rust__Roots/?l=turkish" title="Visit Steam" target="_blank">
-                  <img src="./images/steam.svg" class="work__code" alt="Steam">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://store.steampowered.com/app/3445360/Rust__Roots/?l=turkish" target="_blank">
-                <div class="image-container">
-                  <img src="./images/rust-and-roots.jpg" class="work__image" alt="Rust & Roots">
-                  <img src="./images/rust-and-roots.gif" class="work__image gif-overlay" alt="Rust & Roots Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 2 - Evil Magic Arena (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Evil Magic Arena | <span class="text-highlight">2D Multiplayer Game</span></h3>
-              <p>
-                Evil Magic Arena is a 2D multiplayer game developed in Unity with cloud integration. My contributions include:
-              </p>
-              <ul class="work__list">
-                <li>Integrating AWS for comprehensive data management</li>
-                <li>Implementing user registration and login systems for account security</li>
-                <li>Designing public and private messaging features for player interaction</li>
-                <li>Creating a robust friend-adding system for social gameplay</li>
-                <li>Developing interactive panels and handling user data updates after game events</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Multiplayer</span>
-                <span class="skill-tag">User Systems</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://www.evilwizards.xyz" target="_blank" class="link__text">
-                  Visit Website <span>&rarr;</span>
-                </a>
-                <a href="https://www.evilwizards.xyz" title="Visit Website" target="_blank">
-                  <img src="./images/ema.svg" class="work__code" alt="Evil Magic Arena Website">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://www.evilwizards.xyz" target="_blank">
-                <div class="image-container">
-                  <img src="./images/evil-magic-arena.jpg" class="work__image" alt="Evil Magic Arena">
-                  <img src="./images/evil-magic-arena.gif" class="work__image gif-overlay" alt="Evil Magic Arena Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 3 - Revenge: The Dagger (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Revenge: The Dagger | <span class="text-highlight">Side Scroller Action Adventure</span></h3>
-              <p>
-                Developed as my university thesis project, Revenge: The Dagger is a side-scrolling puzzle game built in Unreal Engine. For this project, I:
-              </p>
-              <ul class="work__list">
-                <li>Handled comprehensive level design with interactive environments</li>
-                <li>Implemented traps, puzzles, and combat systems including firearms</li>
-                <li>Created dialogue systems to enhance narrative elements</li>
-                <li>Integrated image processing techniques for visual feedback</li>
-                <li>Designed core gameplay mechanics and player interaction systems</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unreal Engine</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Blueprint</span>
-                <span class="skill-tag">Image Processing</span>
-                <span class="skill-tag">Level Design</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank" class="link__text">
-                  Play on Itch.io <span>&rarr;</span>
-                </a>
-                <a href="https://hbrahimozdemir.itch.io/revengedaggergame" title="Play on Itch.io" target="_blank">
-                  <img src="./images/itch-io.svg" class="work__code" alt="Itch.io">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://hbrahimozdemir.itch.io/revengedaggergame" target="_blank">
-                <div class="image-container">
-                  <img src="./images/revenge-the-dagger.jpg" class="work__image" alt="Revenge Game">
-                  <img src="./images/revenge-the-dagger.gif" class="work__image gif-overlay" alt="Revenge Game Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 4 - Toys Brawl (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Toys Brawl | <span class="text-highlight">3D Co-op Physics Shooter</span></h3>
-              <p>
-                Toys Brawl is a 3D local co-op, physics-based shooter with rogue-lite elements developed in Unity. In this project, I:
-              </p>
-              <ul class="work__list">
-                <li>Implemented ragdoll character movements and intuitive physics controls</li>
-                <li>Developed diverse weapon systems with unique interactions</li>
-                <li>Created damage mechanics for both dealing and receiving damage</li>
-                <li>Designed player upgrade systems that enhance gameplay progression</li>
-                <li>Crafted UI/UX elements for seamless player experience</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">Physics System</span>
-                <span class="skill-tag">Game Mechanics</span>
-                <span class="skill-tag">UI/UX Design</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://store.playstation.com/en-tr/concept/10012882/" target="_blank" class="link__text">
-                  Visit PlayStation Store <span>&rarr;</span>
-                </a>
-                <a href="https://store.playstation.com/en-tr/concept/10012882/" title="Visit PlayStation Store" target="_blank">
-                  <img src="./images/psstore.svg" class="work__code" alt="PlayStation Store">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://store.playstation.com/en-tr/concept/10012882/" target="_blank">
-                <div class="image-container">
-                  <img src="./images/toys-brawl.jpg" class="work__image" alt="Toys Brawl">
-                  <img src="./images/toys-brawl.gif" class="work__image gif-overlay" alt="Toys Brawl Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 5 - Tiny Siege (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Tiny Siege | <span class="text-highlight">2D RTS Mobile Game</span></h3>
-              <p>
-                Tiny Siege is a 2D RTS game developed within five days as part of a case study project. During this rapid development, I:
-              </p>
-              <ul class="work__list">
-                <li>Applied SOLID principles and object-oriented programming techniques</li>
-                <li>Focused on mobile optimization for smooth performance</li>
-                <li>Developed using Unity with rapid prototyping methods</li>
-                <li>Implemented core RTS mechanics in a condensed timeframe</li>
-                <li>Continued development with gamification elements</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">SOLID Principles</span>
-                <span class="skill-tag">OOP</span>
-                <span class="skill-tag">Mobile Optimization</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://play.unity.com/en/games/b148d828-951a-4a49-b6a5-adbd6510f110/webgl2" target="_blank" class="link__text">
-                  Play on Unity Play <span>&rarr;</span>
-                </a>
-                <a href="https://play.unity.com/en/games/b148d828-951a-4a49-b6a5-adbd6510f110/webgl2" title="Play on Unity Play" target="_blank">
-                  <img src="./images/unityplay.svg" class="work__code" alt="Unity Play">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://play.unity.com/en/games/b148d828-951a-4a49-b6a5-adbd6510f110/webgl2" target="_blank">
-                <div class="image-container">
-                  <img src="./images/tiny-siege.jpg" class="work__image" alt="Tiny Siege">
-                  <img src="./images/tiny-siege.gif" class="work__image gif-overlay" alt="Tiny Siege Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 6 - Shahmaran (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Shahmaran | <span class="text-highlight">Hyper-casual Action Game</span></h3>
-              <p>
-                Shahmaran is a hyper-casual video game developed at AnkA Interactive. As a C++ Unreal Engine Game Developer on this project, I contributed to:
-              </p>
-              <ul class="work__list">
-                <li>Implementing core game mechanics and gameplay systems</li>
-                <li>Programming the graphical user interface for intuitive player interaction</li>
-                <li>Integrating sound systems to enhance the gaming experience</li>
-                <li>Adapting the game for MacOS and iOS platforms for wider accessibility</li>
-                <li>Optimizing performance for mobile devices</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Unreal Engine</span>
-                <span class="skill-tag">Game Mechanics</span>
-                <span class="skill-tag">GUI Design</span>
-                <span class="skill-tag">Mobile Integration</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank" class="link__text">
-                  Visit Steam Page <span>&rarr;</span>
-                </a>
-                <a href="https://store.steampowered.com/app/3061480/Shahmaran/" title="Visit Steam" target="_blank">
-                  <img src="./images/steam.svg" class="work__code" alt="Steam">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://store.steampowered.com/app/3061480/Shahmaran/" target="_blank">
-                <div class="image-container">
-                  <img src="./images/shahmaran.jpg" class="work__image" alt="Shahmaran Game">
-                  <img src="./images/shahmaran.gif" class="work__image gif-overlay" alt="Shahmaran Game Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 7 - Catpocalypse (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Catpocalypse | <span class="text-highlight">Mobile Hyper-casual Game</span></h3>
-              <p>
-                Catpocalypse is a mobile hyper-casual game with rogue-lite mechanics and an endless loop structure. For this project, I:
-              </p>
-              <ul class="work__list">
-                <li>Developed original assets for a unique gaming experience</li>
-                <li>Designed customizable features that enhance player engagement</li>
-                <li>Created an endless loop structure for extended gameplay</li>
-                <li>Implemented rogue-lite mechanics for progression</li>
-                <li>Optimized performance for mobile platforms</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">Mobile Development</span>
-                <span class="skill-tag">Game Design</span>
-                <span class="skill-tag">Asset Creation</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank" class="link__text">
-                  Play on Itch.io <span>&rarr;</span>
-                </a>
-                <a href="https://hbrahimozdemir.itch.io/catpocalypse" title="Play on Itch.io" target="_blank">
-                  <img src="./images/itch-io.svg" class="work__code" alt="Itch.io">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://hbrahimozdemir.itch.io/catpocalypse" target="_blank">
-                <div class="image-container">
-                  <img src="./images/catpocalypse1.jpg" class="work__image" alt="Catpocalypse">
-                  <img src="./images/catpocalypse1.gif" class="work__image gif-overlay" alt="Catpocalypse Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 8 - Ekocin (Reordered) -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Ekocin | <span class="text-highlight">Educational Environmental Game</span></h3>
-              <p>
-                Ekocin is an educational game developed for middle school students as part of a TÜBİTAK project at Bolu Abant İzzet Baysal University. For this collaborative project, I:
-              </p>
-              <ul class="work__list">
-                <li>Implemented comprehensive game mechanics focused on environmental education</li>
-                <li>Developed using Unity with an emphasis on educational content</li>
-                <li>Created a Node.js and MongoDB connection system for data tracking</li>
-                <li>Designed features enabling teachers to monitor student progress</li>
-                <li>Focused on sustainability concepts and environmental conservation</li>
-              </ul>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">Educational Design</span>
-              </div>
-
-              <div class="work__links">
-                <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" target="_blank" class="link__text">
-                  Play on Unity Play <span>&rarr;</span>
-                </a>
-                <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" title="Play on Unity Play" target="_blank">
-                  <img src="./images/unityplay.svg" class="work__code" alt="Unity Play">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" target="_blank">
-                <div class="image-container">
-                  <img src="./images/ekocin.jpg" class="work__image" alt="Ekocin">
-                  <img src="./images/ekocin.gif" class="work__image gif-overlay" alt="Ekocin Animation">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** Clients ***** -->
-    <section class="client" id="clients">
-      <div class="row">
-        <h2>Companies I've <span class="text-accent">Worked For</span></h2>
-        <div class="client__logos">
-          <div class="company-card">
-            <img src="./images/welfish.png" class="client__logo" alt="Welfish Studio" />
-            <p class="company-name">Welfish Studio</p>
-          </div>
-          <div class="company-card">
-            <img src="./images/anka.png" class="client__logo" alt="AnkA Interactive" />
-            <p class="company-name">AnkA Interactive</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** About ***** -->
-    <section class="about" id="about">
-      <div class="row">
-        <h2>About <span class="text-accent">Me</span></h2>
-        <div class="about__content">
-          <div class="about__text">
-            <p>
-              Born in Samsun, I've always been passionate about games and technology. As a <span class="text-highlight">gamer, developer, and athlete</span>, I strive for constant self-improvement. I'm also curious about fields like history, geography, and science, often thinking through problems like a programmer—step by step, like pseudocode.
-            </p>
-            <p>
-              Game development has become my creative and analytical outlet. I started with the <span class="text-accent">Godot engine</span> and now primarily use <span class="text-accent">Unreal Engine</span>, with strong experience in <span class="text-accent">Unity</span> as well. Throughout my work, I focus on applying <span class="text-highlight">SOLID principles and object-oriented programming (OOP)</span> to create scalable and maintainable solutions.
-            </p>
-            <p>
-              I've contributed to academic and professional projects, including my thesis game <em>Revenge: The Dagger</em> using image processing, the <em>Shahmaran</em> project at <span class="text-accent">AnkA Interactive</span>, and cross-platform development with AI systems at <span class="text-accent">Welfish Studio</span>. I'm always excited to learn and grow in the world of interactive technologies.
-            </p>
-            <a href="./files/umit-numan-duman-resume.pdf" class="btn btn--secondary" target="_blank">My Resume</a>
-          </div>
-
-          <div class="about__photo-container">
-            <div class="photo-frame large">
-              <img class="about__photo" src="./images/umit-numan-duman.png" alt="Ümit Numan Duman" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ***** Contact ***** -->
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2>Get in <span class="text-accent">Touch</span></h2>
-      <div class="contact__info">
-        <p>
-          If you have any questions, project inquiries, or just want to connect, feel free to reach out. I'm always open to new opportunities and collaborations in game development. You can contact me via email or connect with me on social media. I look forward to hearing from you!
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="particles" id="particles"></div>
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1>Ümit Numan Duman</h1>
+        <p class="hero-subtitle">
+          <span class="text-highlight">Computer Engineer</span> | 
+          <span class="text-accent">Game Developer</span>
         </p>
-        <a href="mailto:numand09@gmail.com" class="btn btn--primary">numand09@gmail.com</a>
+        <p>Crafting immersive gaming experiences with cutting-edge technology and creative problem-solving.</p>
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        
+        <div class="social-links">
+          <a href="https://github.com/numand09" target="_blank" class="social-link">
+            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" target="_blank" class="social-link">
+            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ***** Footer ***** -->
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <ul class="footer__social-links">
-        <li class="footer__social-link-item">
-          <a href="https://github.com/numand09" title="Link to GitHub Profile" class="social-icon-link">
-            <img src="./images/github.svg" class="footer__social-image" alt="GitHub">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" title="Link to LinkedIn Profile" class="social-icon-link">
-            <img src="./images/linkedin.svg" class="footer__social-image" alt="LinkedIn">
-          </a>
-        </li>
-      </ul>
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>My <span class="text-accent">Portfolio</span></h2>
+      
+      <!-- Horizontal Scroll for Featured Projects -->
+      <div class="portfolio-scroll">
+        <div class="portfolio-grid">
+          <!-- Project 1 - Rust & Roots -->
+          <div class="portfolio-card animated-border fade-in">
+            <div class="portfolio-img-container">
+              <img src="./images/rust-and-roots.jpg" class="portfolio-img" alt="Rust & Roots">
+              <img src="./images/rust-and-roots.gif" class="portfolio-img portfolio-img-overlay" alt="Rust & Roots Animation">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Rust & Roots</h3>
+              <p class="portfolio-subtitle">Strategic Top-Down Shooter</p>
+              <p class="portfolio-desc">
+                Dark, strategic top-down shooter with intelligent enemy AI, drone mechanics, and seamless UI/UX features.
+              </p>
+              <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">AI</span>
+              </div>
+              <a href="https://store.steampowered.com/app/3445360/Rust__Roots/?l=turkish" class="portfolio-link" target="_blank">
+                Steam Page
+                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
 
-      <p>
-        &copy; <span id="year"></span> <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" class="link">Ümit Numan Duman</a>. All rights reserved.
-      </p>
-    </div>
-    
-    <a href="#top" class="back-to-top" title="Back to Top">
-      <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image">
-    </a>
-  </footer>
+          <!-- Project 2 - Evil Magic Arena -->
+          <div class="portfolio-card animated-border fade-in">
+            <div class="portfolio-img-container">
+              <img src="./images/evil-magic-arena.jpg" class="portfolio-img" alt="Evil Magic Arena">
+              <img src="./images/evil-magic-arena.gif" class="portfolio-img portfolio-img-overlay" alt="Evil Magic Arena Animation">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Evil Magic Arena</h3>
+              <p class="portfolio-subtitle">2D Multiplayer Game</p>
+              <p class="portfolio-desc">
+                2D multiplayer game with AWS integration, user systems, and interactive social features.
+              </p>
+              <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">AWS</span>
+              </div>
+              <a href="https://www.evilwizards.xyz" class="portfolio-link" target="_blank">
+                Visit Website
+                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
 
-  <script src="index.js"></script>
-  <script>
-    // Update copyright year
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Add touch support for mobile devices
-    document.addEventListener('DOMContentLoaded', function() {
-      // Function to handle mobile touch for showing GIFs
-      function handleTouch() {
-        const containers = document.querySelectorAll('.image-container');
+          <!-- Project 3 - Revenge: The Dagger -->
+          <div class="portfolio-card animated-border fade-in">
+            <div class="portfolio-img-container">
+              <img src="./images/revenge-the-dagger.jpg" class="portfolio-img" alt="Revenge Game">
+              <img src="./images/revenge-the-dagger.gif" class="portfolio-img portfolio-img-overlay" alt="Revenge Game Animation">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Revenge: The Dagger</h3>
+              <p class="portfolio-subtitle">Side Scroller Action Adventure</p>
+              <p class="portfolio-desc">
+                Thesis project with interactive environments, traps, puzzles, and narrative elements.
+              </p>
+              <div class="skills-container">
+                <span class="skill-tag">Unreal</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Blueprint</span>
+              </div>
+              <a href="https://hbrahimozdemir.itch.io/revengedaggergame" class="portfolio-link" target="_blank">
+                Play on Itch.io
+                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Regular Grid for All Projects -->
+      <div class="portfolio-grid">
+        <!-- Project 4 - Toys Brawl -->
+        <div class="portfolio-card fade-in">
+          <div class="portfolio-img-container">
+            <img src="./images/toys-brawl.jpg" class="portfolio-img" alt="Toys Brawl">
+            <img src="./images/toys-brawl.gif" class="portfolio-img portfolio-img-overlay" alt="Toys Brawl Animation">
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Toys Brawl</h3>
+            <p class="portfolio-subtitle">3D Co-op Physics Shooter</p>
+            <p class="portfolio-desc">
+              Local co-op game with ragdoll physics, weapon systems, and player upgrades.
+            </p>
+            <div class="skills-container">
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">Physics</span>
+            </div>
+            <a href="https://store.playstation.com/en-tr/concept/10012882/" class="portfolio-link" target="_blank">
+              PlayStation Store
+              <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5 - Tiny Siege -->
+        <div class="portfolio-card fade-in">
+          <div class="portfolio-img-container">
+            <img src="./images/tiny-siege.jpg" class="portfolio-img" alt="Tiny Siege">
+            <img src="./images/tiny-siege.gif" class="portfolio-img portfolio-img-overlay" alt="Tiny Siege Animation">
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Tiny Siege</h3>
+              <p class="portfolio-subtitle">2D RTS Mobile Game</p>
+              <p class="portfolio-desc">
+                Rapid development project with SOLID principles and mobile optimization.
+              </p>
+              <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">SOLID</span>
+              </div>
+              <a href="https://play.unity.com/en/games/b148d828-951a-4a49-b6a5-adbd6510f110/webgl2" class="portfolio-link" target="_blank">
+                Play on Unity Play
+                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+          <!-- Project 6 - Shahmaran -->
+          <div class="portfolio-card fade-in">
+            <div class="portfolio-img-container">
+              <img src="./images/shahmaran.jpg" class="portfolio-img" alt="Shahmaran Game">
+              <img src="./images/shahmaran.gif" class="portfolio-img portfolio-img-overlay" alt="Shahmaran Game Animation">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Shahmaran</h3>
+              <p class="portfolio-subtitle">Hyper-casual Action Game</p>
+              <p class="portfolio-desc">
+                Developed at AnkA Interactive with focus on mobile optimization and cross-platform support.
+              </p>
+              <div class="skills-container">
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Unreal</span>
+                <span class="skill-tag">Mobile</span>
+              </div>
+              <a href="https://store.steampowered.com/app/3061480/Shahmaran/" class="portfolio-link" target="_blank">
+                Steam Page
+                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+          <!-- Project 7 - Catpocalypse -->
+          <div class="portfolio-card fade-in">
+            <div class="portfolio-img-container">
+              <img src="./images/catpocalypse1.jpg" class="portfolio-img" alt="Catpocalypse">
+              <img src="./images/catpocalypse1.gif" class="portfolio-img portfolio-img-overlay" alt="Catpocalypse Animation">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Catpocalypse</h3>
+              <p class="portfolio-subtitle">Mobile Hyper-casual Game</p>
+              <p class="portfolio-desc">
+                Rogue-lite mechanics with endless loop structure and unique assets.
+              </p>
+              <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Mobile</span>
+              </div>
+              <a href="https://hbrahimozdemir.itch.io/catpocalypse" class="portfolio-link" target="_blank">
+                Play on Itch.io
+                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+          <!-- Project 8 - Ekocin -->
+          <div class="portfolio-card fade-in">
+            <div class="portfolio-img-container">
+              <img src="./images/ekocin.jpg" class="portfolio-img" alt="Ekocin">
+              <img src="./images/ekocin.gif" class="portfolio-img portfolio-img-overlay" alt="Ekocin Animation">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Ekocin</h3>
+              <p class="portfolio-subtitle">Educational Environmental Game</p>
+              <p class="portfolio-desc">
+                TÜBİTAK project with MongoDB integration for student progress tracking.
+              </p>
+              <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">MongoDB</span>
+              </div>
+              <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" class="portfolio-link" target="_blank">
+                Play on Unity Play
+                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Companies Section -->
+    <section class="companies" id="companies">
+      <div class="container">
+        <h2>Companies I've <span class="text-accent">Worked For</span></h2>
+        <div class="companies-grid">
+          <div class="company-card fade-in">
+            <img src="./images/welfish.png" class="company-logo" alt="Welfish Studio">
+            <h3 class="company-name">Welfish Studio</h3>
+            <p>Game Development</p>
+          </div>
+          <div class="company-card fade-in">
+            <img src="./images/anka.png" class="company-logo" alt="AnkA Interactive">
+            <h3 class="company-name">AnkA Interactive</h3>
+            <p>C++ Development</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>About <span class="text-accent">Me</span></h2>
+        <div class="about-content">
+          <div class="about-text fade-in">
+            <p>
+              Born in Samsun, I've always been passionate about games and technology. As a <span class="text-highlight">gamer, developer, and athlete</span>, I strive for constant self-improvement. I'm also curious about fields like history, geography, and science.
+            </p>
+            <p>
+              Game development is my creative and analytical outlet. I started with <span class="text-accent">Godot</span> and now primarily use <span class="text-accent">Unreal Engine</span>, with strong experience in <span class="text-accent">Unity</span> as well. I focus on applying <span class="text-highlight">SOLID principles and object-oriented programming</span> throughout my work.
+            </p>
+            <p>
+              My professional journey includes academic projects like <em>Revenge: The Dagger</em>, commercial work at <span class="text-accent">AnkA Interactive</span> on <em>Shahmaran</em>, and development with AI systems at <span class="text-accent">Welfish Studio</span>.
+            </p>
+            <a href="./files/umit-numan-duman-resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+          </div>
+          
+          <div class="about-img-container fade-in">
+            <img class="about-img" src="./images/umit-numan-duman.png" alt="Ümit Numan Duman">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Get in <span class="text-accent">Touch</span></h2>
+        <div class="contact-content fade-in">
+          <p class="contact-text">
+            Have a project in mind or looking for a game developer? I'm always open to new opportunities and collaborations! Feel free to reach out — let's create something amazing together.
+          </p>
+          <a href="mailto:numand09@gmail.com" class="btn btn-secondary">numand09@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-social">
+          <a href="https://github.com/numand09" target="_blank" class="social-link">
+            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" target="_blank" class="social-link">
+            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+        </div>
+        <p>&copy; <span id="year"></span> <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" class="footer-link">Ümit Numan Duman</a>. All rights reserved.</p>
+      </div>
+      
+      <a href="#home" class="back-to-top" id="back-to-top">
+        <svg class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+      </a>
+    </footer>
+  
+    <script>
+      // Update copyright year
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navList = document.querySelector('.nav-list');
+      
+      mobileMenuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking a nav link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navList.classList.remove('active');
+        });
+      });
+      
+      // Back to top button
+      const backToTopBtn = document.getElementById('back-to-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+      
+      // Navbar scroll effect
+      const navbar = document.querySelector('.navbar');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Particles animation
+      function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const colors = ['#6A4DFF', '#FF4D94', '#4DFFE1'];
         
-        containers.forEach(container => {
+        for (let i = 0; i < 30; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          
+          // Randomize particle properties
+          const size = Math.random() * 15 + 5;
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          const left = Math.random() * 100;
+          const delay = Math.random() * 15;
+          const duration = Math.random() * 10 + 10;
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.backgroundColor = color;
+          particle.style.left = `${left}%`;
+          particle.style.bottom = '-20px';
+          particle.style.animationDelay = `${delay}s`;
+          particle.style.animationDuration = `${duration}s`;
+          
+          particlesContainer.appendChild(particle);
+        }
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const target = document.querySelector(this.getAttribute('href'));
+          
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 70,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Scroll animation for elements
+      function animateOnScroll() {
+        const elements = document.querySelectorAll('.fade-in');
+        
+        elements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      }
+      
+      // Mobile touch support for showing GIFs
+      function handleMobileGifHover() {
+        const imgContainers = document.querySelectorAll('.portfolio-img-container');
+        
+        imgContainers.forEach(container => {
           container.addEventListener('touchstart', function() {
-            const gifOverlay = this.querySelector('.gif-overlay');
-            if (gifOverlay) {
-              gifOverlay.style.opacity = "1";
+            const overlay = this.querySelector('.portfolio-img-overlay');
+            if (overlay) {
+              overlay.style.opacity = '1';
             }
           }, { passive: true });
           
           container.addEventListener('touchend', function() {
-            const gifOverlay = this.querySelector('.gif-overlay');
-            if (gifOverlay) {
-              // Small delay before hiding to make sure it's visible on tap
+            const overlay = this.querySelector('.portfolio-img-overlay');
+            if (overlay) {
               setTimeout(() => {
-                gifOverlay.style.opacity = "0";
+                overlay.style.opacity = '0';
               }, 1500);
             }
           }, { passive: true });
         });
       }
       
-      handleTouch();
-    });
-  </script>
-</body>
-</html>
+      // Initialize all functions on page load
+      window.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        handleMobileGifHover();
+        
+        // Set initial state for elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Run animation for visible elements
+        animateOnScroll();
+      });
+      
+      // Trigger scroll animations when scrolling
+      window.addEventListener('scroll', animateOnScroll);
+    </script>
+  </body>
+  </html>
