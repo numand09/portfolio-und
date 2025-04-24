@@ -1191,3 +1191,484 @@
     </script>
   </body>
   </html>
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/umit-numan-duman.png" />
+  <title>Ümit Numan Duman | Game Developer</title>
+  <meta name="description" content="Computer Engineer | Game Developer">
+  <meta name="keywords" content="C, C++, C#, Unreal Engine, Blueprint, Unity, Game Development, Godot" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Önceki stil kodları korundu */
+    :root {
+      --primary-color: #6A4DFF;
+      --secondary-color: #FF4D94;
+      --accent-color: #4DFFE1;
+      --dark-bg: #1A1A2E;
+      --light-bg: #f5f5f7;
+      --text-color: #16213E;
+      --light-text: #ffffff;
+      --card-bg: #ffffff;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --gradient-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      --skill-gradient: linear-gradient(135deg, #6A4DFF, #4DFFE1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+      overflow-x: hidden;
+    }
+
+    /* Snake Oyun Paneli Stilleri */
+    .snake-game-container {
+      position: fixed;
+      right: 2rem;
+      bottom: 8rem;
+      width: 22rem;
+      z-index: 900;
+      border-radius: 1.2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      background: var(--dark-bg);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      transform: translateX(calc(100% - 4rem));
+    }
+
+    .snake-game-container:hover,
+    .snake-game-container.active {
+      transform: translateX(0);
+    }
+
+    .snake-game-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: var(--gradient-bg);
+      color: var(--light-text);
+    }
+
+    .snake-game-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .snake-game-score {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .snake-game-canvas {
+      display: block;
+      background-color: #0C0C1D;
+      border-bottom-left-radius: 1.2rem;
+      border-bottom-right-radius: 1.2rem;
+    }
+
+    .snake-toggle {
+      position: absolute;
+      left: -1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3rem;
+      height: 5rem;
+      background: var(--primary-color);
+      border-radius: 1rem 0 0 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: white;
+      box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .snake-icon {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    .snake-controls {
+      padding: 1rem;
+      text-align: center;
+      color: var(--light-text);
+      font-size: 1.2rem;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .snake-controls span {
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .snake-game-container {
+        bottom: 6rem;
+        width: 18rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Önceki içerik korundu -->
+  
+  <!-- Snake Oyunu Paneli -->
+  <div class="snake-game-container" id="snakeGameContainer">
+    <div class="snake-toggle" id="snakeToggle">
+      <svg class="snake-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8-1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-8-1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm13.96-6.3C15.63 1.59 3.77 4.14 2.19 5.31a.5.5 0 0 0 0 .76c4.57 3.32 7.83 7.4 9.36 11.77.12.33.48.47.74.29 0 0 2.63-1.86 4.59-5.17 2.21-3.71 5.76-3.28 5.76-3.28.35 0 .54-.42.32-.71-2.3-3.28-7.58-5.91-7-5.27z"/>
+      </svg>
+    </div>
+    <div class="snake-game-header">
+      <div class="snake-game-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.1 17.25C12.3 17.25 12.5 17.15 12.6 17.05L18.1 11.55C18.3 11.35 18.3 11.05 18.1 10.85L12.6 5.35C12.4 5.15 12.2 5.15 12 5.15C11.3 5.15 10.9 5.95 11.3 6.45L16 11.15L11.3 15.85C11.1 16.05 11 16.25 11 16.45C11 16.95 11.5 17.25 12.1 17.25Z" fill="currentColor"/>
+          <path d="M6.1 17.25C6.3 17.25 6.5 17.15 6.6 17.05L12.1 11.55C12.3 11.35 12.3 11.05 12.1 10.85L6.6 5.35C6.4 5.15 6.2 5.15 6 5.15C5.3 5.15 4.9 5.95 5.3 6.45L10 11.15L5.3 15.85C5.1 16.05 5 16.25 5 16.45C5 16.95 5.5 17.25 6.1 17.25Z" fill="currentColor"/>
+        </svg>
+        Snake
+      </div>
+      <div class="snake-game-score">Skor: <span id="score">0</span></div>
+    </div>
+    <canvas id="snakeCanvas" class="snake-game-canvas" width="220" height="220"></canvas>
+    <div class="snake-controls">
+      Kontroller: <span>↑ ↓ ← →</span> veya <span>W A S D</span>
+    </div>
+  </div>
+
+  <script>
+    // Önceki script kodları korundu
+    
+    // Snake Oyunu
+    window.addEventListener('DOMContentLoaded', function() {
+      // Snake Oyun Kodu
+      const canvas = document.getElementById('snakeCanvas');
+      const ctx = canvas.getContext('2d');
+      const snakeToggle = document.getElementById('snakeToggle');
+      const snakeContainer = document.getElementById('snakeGameContainer');
+      const scoreElement = document.getElementById('score');
+      
+      // Toggle fonksiyonu
+      snakeToggle.addEventListener('click', function() {
+        snakeContainer.classList.toggle('active');
+      });
+      
+      // Oyun değişkenleri
+      const gridSize = 10;
+      const gridWidth = canvas.width / gridSize;
+      const gridHeight = canvas.height / gridSize;
+      
+      let snake = [
+        {x: 10, y: 10},
+        {x: 9, y: 10},
+        {x: 8, y: 10}
+      ];
+      
+      let food = {
+        x: Math.floor(Math.random() * gridWidth),
+        y: Math.floor(Math.random() * gridHeight)
+      };
+      
+      let direction = 'right';
+      let nextDirection = 'right';
+      let score = 0;
+      let gameActive = false;
+      let gameSpeed = 100;
+      let gameLoop;
+      
+      // Oyun başlatma mesajı
+      function showStartMessage() {
+        ctx.fillStyle = '#0C0C1D';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#4DFFE1';
+        ctx.font = '14px Poppins';
+        ctx.textAlign = 'center';
+        ctx.fillText('Başlamak için bir yön', canvas.width/2, canvas.height/2 - 10);
+        ctx.fillText('tuşuna basın', canvas.width/2, canvas.height/2 + 10);
+      }
+      
+      // Oyun sonu mesajı
+      function showGameOverMessage() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#FF4D94';
+        ctx.font = 'bold 16px Poppins';
+        ctx.textAlign = 'center';
+        ctx.fillText('Oyun Bitti!', canvas.width/2, canvas.height/2 - 15);
+        
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '14px Poppins';
+        ctx.fillText(`Skor: ${score}`, canvas.width/2, canvas.height/2 + 10);
+        
+        ctx.font = '12px Poppins';
+        ctx.fillText('Tekrar başlamak için', canvas.width/2, canvas.height/2 + 35);
+        ctx.fillText('bir yön tuşuna basın', canvas.width/2, canvas.height/2 + 55);
+      }
+      
+      // Oyunu sıfırla
+      function resetGame() {
+        snake = [
+          {x: 10, y: 10},
+          {x: 9, y: 10},
+          {x: 8, y: 10}
+        ];
+        direction = 'right';
+        nextDirection = 'right';
+        score = 0;
+        scoreElement.textContent = score;
+        placeFood();
+        
+        if (gameLoop) {
+          clearInterval(gameLoop);
+        }
+        
+        gameLoop = setInterval(gameStep, gameSpeed);
+        gameActive = true;
+      }
+      
+      // Yiyecek yerleştirme
+      function placeFood() {
+        // Yiyeceğin yılanın üzerinde olmamasını sağla
+        let validPosition = false;
+        let newFood;
+        
+        while (!validPosition) {
+          newFood = {
+            x: Math.floor(Math.random() * gridWidth),
+            y: Math.floor(Math.random() * gridHeight)
+          };
+          
+          validPosition = true;
+          for (let segment of snake) {
+            if (segment.x === newFood.x && segment.y === newFood.y) {
+              validPosition = false;
+              break;
+            }
+          }
+        }
+        
+        food = newFood;
+      }
+      
+      // Oyun mantığı
+      function gameStep() {
+        // Yönü güncelle
+        direction = nextDirection;
+        
+        // Yılanın başının yeni pozisyonunu hesapla
+        const head = {x: snake[0].x, y: snake[0].y};
+        
+        switch(direction) {
+          case 'up':
+            head.y--;
+            break;
+          case 'down':
+            head.y++;
+            break;
+          case 'left':
+            head.x--;
+            break;
+          case 'right':
+            head.x++;
+            break;
+        }
+        
+        // Duvara çarpma kontrolü
+        if (head.x < 0 || head.x >= gridWidth || head.y < 0 || head.y >= gridHeight) {
+          gameOver();
+          return;
+        }
+        
+        // Kendine çarpma kontrolü
+        for (let i = 0; i < snake.length; i++) {
+          if (snake[i].x === head.x && snake[i].y === head.y) {
+            gameOver();
+            return;
+          }
+        }
+        
+        // Yılanın başını güncelle
+        snake.unshift(head);
+        
+        // Yemeği yeme kontrolü
+        if (head.x === food.x && head.y === food.y) {
+          score += 10;
+          scoreElement.textContent = score;
+          placeFood();
+          
+          // Hızı arttır (belirli bir limite kadar)
+          if (gameSpeed > 50 && score % 50 === 0) {
+            gameSpeed -= 5;
+            clearInterval(gameLoop);
+            gameLoop = setInterval(gameStep, gameSpeed);
+          }
+        } else {
+          // Yemeği yemediyse kuyruğunu kısalt
+          snake.pop();
+        }
+        
+        // Oyun alanını çiz
+        draw();
+      }
+      
+      // Oyun sonu
+      function gameOver() {
+        gameActive = false;
+        clearInterval(gameLoop);
+        showGameOverMessage();
+      }
+      
+      // Çizim fonksiyonu
+      function draw() {
+        // Arka planı temizle
+        ctx.fillStyle = '#0C0C1D';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Yılanı çiz
+        snake.forEach((segment, index) => {
+          // Başı farklı renk yap
+          if (index === 0) {
+            ctx.fillStyle = '#FF4D94';
+          } else {
+            // Gradient yılan vücudu
+            const colorPos = index / snake.length;
+            ctx.fillStyle = `hsl(${260 + colorPos * 60}, 100%, 65%)`;
+          }
+          
+          ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 1, gridSize - 1);
+        });
+        
+        // Yemeği çiz
+        ctx.fillStyle = '#4DFFE1';
+        ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 1, gridSize - 1);
+      }
+      
+      // Klavye kontrolleri
+      window.addEventListener('keydown', function(e) {
+        if (!gameActive) {
+          if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'w', 'a', 's', 'd', 'W', 'A', 'S', 'D'].includes(e.key)) {
+            resetGame();
+          }
+          return;
+        }
+        
+        switch(e.key) {
+          case 'ArrowUp':
+          case 'w':
+          case 'W':
+            if (direction !== 'down') nextDirection = 'up';
+            break;
+          case 'ArrowDown':
+          case 's':
+          case 'S':
+            if (direction !== 'up') nextDirection = 'down';
+            break;
+          case 'ArrowLeft':
+          case 'a':
+          case 'A':
+            if (direction !== 'right') nextDirection = 'left';
+            break;
+          case 'ArrowRight':
+          case 'd':
+          case 'D':
+            if (direction !== 'left') nextDirection = 'right';
+            break;
+        }
+      });
+      
+      // Dokunmatik kontroller için
+      let touchStartX = 0;
+      let touchStartY = 0;
+      
+      canvas.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+        e.preventDefault();
+        
+        if (!gameActive) {
+          resetGame();
+        }
+      }, { passive: false });
+      
+      canvas.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+      }, { passive: false });
+      
+      canvas.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          // Yatay kaydırma
+          if (diffX > 0 && direction !== 'left') {
+            nextDirection = 'right';
+          } else if (diffX < 0 && direction !== 'right') {
+            nextDirection = 'left';
+          }
+        } else {
+          // Dikey kaydırma
+          if (diffY > 0 && direction !== 'up') {
+            nextDirection = 'down';
+          } else if (diffY < 0 && direction !== 'down') {
+            nextDirection = 'up';
+          }
+        }
+        
+        e.preventDefault();
+      }, { passive: false });
+      
+      // İlk mesajı göster
+      showStartMessage();
+      
+      // Otomatik oyun başlatma
+      canvas.addEventListener('click', function() {
+        if (!gameActive) {
+          resetGame();
+        }
+      });
+      
+      // Odak kaybı kontrolü
+      window.addEventListener('blur', function() {
+        if (gameActive) {
+          clearInterval(gameLoop);
+        }
+      });
+      
+      window.addEventListener('focus', function() {
+        if (gameActive) {
+          gameLoop = setInterval(gameStep, gameSpeed);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
