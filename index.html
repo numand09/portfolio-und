@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,68 +7,35 @@
   <title>Umit Numan Duman | Game Developer</title>
   <meta name="description" content="Computer Engineer | Game Developer">
   <meta name="keywords" content="C, C++, C#, Unreal Engine, Blueprint, Unity, Game Development, Godot" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #6A4DFF;
-      --secondary-color: #FF4D94;
-      --accent-color: #4DFFE1;
-      --dark-bg: #1A1A2E;
-      --light-bg: #f5f5f7;
-      --text-color: #16213E;
-      --light-text: #ffffff;
-      --card-bg: #ffffff;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      --gradient-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      --primary: #6A4DFF;
+      --secondary: #FF4D94;
+      --accent: #4DFFE1;
+      --dark: #1A1A2E;
+      --light: #f5f5f7;
+      --text: #16213E;
+      --light-text: #fff;
+      --card-bg: #fff;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
       --skill-gradient: linear-gradient(135deg, #6A4DFF, #4DFFE1);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 62.5%;
-      scroll-behavior: smooth;
-    }
-
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html {font-size: 62.5%; scroll-behavior: smooth;}
     body {
       font-family: 'Poppins', sans-serif;
       font-size: 1.6rem;
       line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--light-bg);
+      color: var(--text);
+      background-color: var(--light);
       overflow-x: hidden;
     }
-
-    .container {
-      max-width: 120rem;
-      margin: 0 auto;
-      padding: 0 3rem;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: 5rem;
-    }
-
-    h2 {
-      font-size: 3.5rem;
-      margin-bottom: 3rem;
-      text-align: center;
-      position: relative;
-      padding-bottom: 1rem;
-    }
-
+    .container {max-width: 120rem; margin: 0 auto; padding: 0 3rem;}
+    h1, h2, h3 {font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2;}
+    h1 {font-size: 5rem;}
+    h2 {font-size: 3.5rem; margin-bottom: 3rem; text-align: center; position: relative; padding-bottom: 1rem;}
     h2::after {
       content: '';
       position: absolute;
@@ -78,33 +44,14 @@
       transform: translateX(-50%);
       width: 8rem;
       height: 0.4rem;
-      background: var(--gradient-bg);
+      background: var(--gradient);
       border-radius: 2rem;
     }
-
-    h3 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s ease;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    ul {
-      list-style: none;
-    }
+    h3 {font-size: 2.2rem; margin-bottom: 1.5rem;}
+    p {margin-bottom: 1.5rem;}
+    a {text-decoration: none; color: inherit; transition: all 0.3s ease;}
+    img {max-width: 100%; display: block;}
+    ul {list-style: none;}
 
     /* Navigation */
     .navbar {
@@ -118,33 +65,11 @@
       padding: 1.5rem 0;
       transition: all 0.3s ease;
     }
-
-    .navbar.scrolled {
-      padding: 1rem 0;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--light-text);
-    }
-
-    .logo span {
-      color: var(--accent-color);
-    }
-
-    .nav-list {
-      display: flex;
-      gap: 2rem;
-    }
-
+    .navbar.scrolled {padding: 1rem 0; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);}
+    .nav-container {display: flex; justify-content: space-between; align-items: center;}
+    .logo {font-size: 2.4rem; font-weight: 700; color: var(--light-text);}
+    .logo span {color: var(--accent);}
+    .nav-list {display: flex; gap: 2rem;}
     .nav-link {
       color: var(--light-text);
       font-weight: 500;
@@ -152,12 +77,7 @@
       border-radius: 0.5rem;
       transition: all 0.3s ease;
     }
-
-    .nav-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
+    .nav-link:hover {background: rgba(255, 255, 255, 0.1); transform: translateY(-2px);}
     .mobile-menu-btn {
       display: none;
       font-size: 2.4rem;
@@ -170,13 +90,12 @@
     /* Hero Section */
     .hero {
       height: 100vh;
-      background: var(--dark-bg);
+      background: var(--dark);
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
     }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -187,29 +106,10 @@
       background: linear-gradient(135deg, rgba(106, 77, 255, 0.3), rgba(255, 77, 148, 0.3));
       z-index: 1;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: var(--light-text);
-      max-width: 60rem;
-    }
-
-    .hero-subtitle {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .text-highlight {
-      color: var(--accent-color);
-      font-weight: 500;
-    }
-
-    .text-accent {
-      color: var(--secondary-color);
-      font-weight: 500;
-    }
-
+    .hero-content {position: relative; z-index: 2; color: var(--light-text); max-width: 60rem;}
+    .hero-subtitle {font-size: 2rem; margin-bottom: 2rem;}
+    .text-highlight {color: var(--accent); font-weight: 500;}
+    .text-accent {color: var(--secondary); font-weight: 500;}
     .btn {
       display: inline-block;
       padding: 1.2rem 3rem;
@@ -222,35 +122,11 @@
       cursor: pointer;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-
-    .btn-primary {
-      background: var(--gradient-bg);
-      color: var(--light-text);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--primary-color);
-      border: 2px solid var(--primary-color);
-    }
-
-    .btn-secondary:hover {
-      background: var(--primary-color);
-      color: var(--light-text);
-      transform: translateY(-3px);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
+    .btn-primary {background: var(--gradient); color: var(--light-text);}
+    .btn-primary:hover {transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);}
+    .btn-secondary {background: transparent; color: var(--primary); border: 2px solid var(--primary);}
+    .btn-secondary:hover {background: var(--primary); color: var(--light-text); transform: translateY(-3px);}
+    .social-links {display: flex; gap: 2rem; margin-top: 3rem;}
     .social-link {
       width: 4rem;
       height: 4rem;
@@ -261,30 +137,16 @@
       border-radius: 50%;
       transition: all 0.3s ease;
     }
-
-    .social-link:hover {
-      background: var(--primary-color);
-      transform: translateY(-3px);
-    }
-
-    .social-icon {
-      width: 2rem;
-      height: 2rem;
-      fill: var(--light-text);
-    }
+    .social-link:hover {background: var(--primary); transform: translateY(-3px);}
+    .social-icon {width: 2rem; height: 2rem; fill: var(--light-text);}
 
     /* Portfolio Section */
-    .portfolio {
-      padding: 10rem 0;
-      background-color: var(--light-bg);
-    }
-
+    .portfolio, .about {padding: 10rem 0; background-color: var(--light);}
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
       gap: 3rem;
     }
-
     .portfolio-card {
       background: var(--card-bg);
       border-radius: 1.5rem;
@@ -295,18 +157,8 @@
       display: flex;
       flex-direction: column;
     }
-
-    .portfolio-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .portfolio-img-container {
-      position: relative;
-      overflow: hidden;
-      padding-top: 56.25%; /* 16:9 aspect ratio */
-    }
-
+    .portfolio-card:hover {transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);}
+    .portfolio-img-container {position: relative; overflow: hidden; padding-top: 56.25%;}
     .portfolio-img {
       position: absolute;
       top: 0;
@@ -316,48 +168,13 @@
       object-fit: cover;
       transition: all 0.5s ease;
     }
-
-    .portfolio-img-overlay {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .portfolio-img-container:hover .portfolio-img-overlay {
-      opacity: 1;
-    }
-
-    .portfolio-content {
-      padding: 2rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .portfolio-title {
-      color: var(--dark-bg);
-      margin-bottom: 1rem;
-    }
-
-    .portfolio-subtitle {
-      color: var(--primary-color);
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .portfolio-desc {
-      margin-bottom: 2rem;
-      color: #666;
-      font-size: 1.5rem;
-      flex-grow: 1;
-    }
-
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
+    .portfolio-img-overlay {opacity: 0; transition: opacity 0.3s ease;}
+    .portfolio-img-container:hover .portfolio-img-overlay {opacity: 1;}
+    .portfolio-content {padding: 2rem; flex-grow: 1; display: flex; flex-direction: column;}
+    .portfolio-title {color: var(--dark); margin-bottom: 1rem;}
+    .portfolio-subtitle {color: var(--primary); font-size: 1.6rem; margin-bottom: 1.5rem;}
+    .portfolio-desc {margin-bottom: 2rem; color: #666; font-size: 1.5rem; flex-grow: 1;}
+    .skills-container {display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;}
     .skill-tag {
       padding: 0.5rem 1.5rem;
       background: var(--skill-gradient);
@@ -366,44 +183,14 @@
       font-size: 1.2rem;
       font-weight: 500;
     }
-
-    .portfolio-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary-color);
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .portfolio-link:hover {
-      color: var(--secondary-color);
-      transform: translateX(5px);
-    }
-
-    .portfolio-link-icon {
-      width: 1.8rem;
-      height: 1.8rem;
-    }
+    .portfolio-link {display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 500;}
+    .portfolio-link:hover {color: var(--secondary); transform: translateX(5px);}
+    .portfolio-link-icon {width: 1.8rem; height: 1.8rem;}
 
     /* Companies Section */
-    .companies {
-      padding: 8rem 0;
-      background: var(--dark-bg);
-      color: var(--light-text);
-    }
-
-    .companies h2 {
-      color: var(--light-text);
-    }
-
-    .companies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-      gap: 4rem;
-      justify-content: center;
-    }
-
+    .companies {padding: 8rem 0; background: var(--dark); color: var(--light-text);}
+    .companies h2 {color: var(--light-text);}
+    .companies-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 4rem;}
     .company-card {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 1.5rem;
@@ -411,99 +198,39 @@
       text-align: center;
       transition: all 0.3s ease;
     }
-
-    .company-card:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-5px);
-    }
-
-    .company-logo {
-      width: 12rem;
-      height: 12rem;
-      margin: 0 auto 2rem;
-      object-fit: contain;
-    }
-
-    .company-name {
-      font-size: 2rem;
-      font-weight: 500;
-    }
+    .company-card:hover {background: rgba(255, 255, 255, 0.1); transform: translateY(-5px);}
+    .company-logo {width: 12rem; height: 12rem; margin: 0 auto 2rem; object-fit: contain;}
+    .company-name {font-size: 2rem; font-weight: 500;}
 
     /* About Section */
-    .about {
-      padding: 10rem 0;
-      background-color: var(--light-bg);
-    }
-
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .about-text {
-      font-size: 1.7rem;
-    }
-
-    .about-img-container {
-      text-align: center;
-    }
-
+    .about-content {display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;}
+    .about-text {font-size: 1.7rem;}
+    .about-img-container {text-align: center;}
     .about-img {
       width: 25rem;
       height: 25rem;
       border-radius: 50%;
       object-fit: cover;
-      border: 0.5rem solid var(--accent-color);
+      border: 0.5rem solid var(--accent);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     /* Contact Section */
-    .contact {
-      padding: 8rem 0;
-      background: var(--gradient-bg);
-      color: var(--light-text);
-    }
-
-    .contact h2 {
-      color: var(--light-text);
-    }
-
-    .contact-content {
-      text-align: center;
-      max-width: 70rem;
-      margin: 0 auto;
-    }
-
-    .contact-text {
-      margin-bottom: 3rem;
-      font-size: 1.8rem;
-    }
+    .contact {padding: 8rem 0; background: var(--gradient); color: var(--light-text);}
+    .contact h2 {color: var(--light-text);}
+    .contact-content {text-align: center; max-width: 70rem; margin: 0 auto;}
+    .contact-text {margin-bottom: 3rem; font-size: 1.8rem;}
 
     /* Footer */
-    .footer {
-      padding: 4rem 0;
-      background: var(--dark-bg);
-      color: var(--light-text);
-      text-align: center;
-      font-size: 1.4rem;
-    }
-
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
+    .footer {padding: 4rem 0; background: var(--dark); color: var(--light-text); text-align: center; font-size: 1.4rem;}
+    .footer-social {display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;}
     .back-to-top {
       position: fixed;
       bottom: 3rem;
       right: 3rem;
       width: 5rem;
       height: 5rem;
-      background: var(--primary-color);
+      background: var(--primary);
       color: var(--light-text);
       border-radius: 50%;
       display: flex;
@@ -515,128 +242,23 @@
       opacity: 0;
       visibility: hidden;
     }
-
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      background: var(--secondary-color);
-      transform: translateY(-5px);
-    }
-
-    .back-to-top-icon {
-      width: 2rem;
-      height: 2rem;
-      fill: var(--light-text);
-    }
+    .back-to-top.visible {opacity: 1; visibility: visible;}
+    .back-to-top:hover {background: var(--secondary); transform: translateY(-5px);}
+    .back-to-top-icon {width: 2rem; height: 2rem; fill: var(--light-text);}
 
     /* Animation */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
-
-    .fade-in {
-      animation: fadeIn 0.6s ease forwards;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      html {
-        font-size: 55%;
-      }
-
-      .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .about-img-container {
-        order: -1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      html {
-        font-size: 50%;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .nav-list {
-        position: fixed;
-        top: 7rem;
-        left: 0;
-        width: 100%;
-        background: var(--dark-bg);
-        padding: 2rem 0;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: all 0.3s ease;
-        pointer-events: none;
-      }
-
-      .nav-list.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero-content {
-        text-align: center;
-        padding: 0 2rem;
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    .fade-in {animation: fadeIn 0.6s ease forwards;}
 
     /* Particle animation */
-    .particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: float 15s infinite linear;
-    }
-
+    .particles {position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;}
+    .particle {position: absolute; border-radius: 50%; opacity: 0.6; animation: float 15s infinite linear;}
     @keyframes float {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.6;
-      }
-      100% {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-      }
+      0% {transform: translateY(0) rotate(0deg); opacity: 0.6;}
+      100% {transform: translateY(-100vh) rotate(360deg); opacity: 0;}
     }
 
     /* Project gallery scroll effect */
@@ -647,29 +269,12 @@
       -ms-overflow-style: none;
       padding: 2rem 0;
     }
-
-    .portfolio-scroll::-webkit-scrollbar {
-      display: none;
-    }
-
-    .portfolio-scroll .portfolio-grid {
-      display: flex;
-      min-width: min-content;
-      gap: 2rem;
-    }
-
-    .portfolio-scroll .portfolio-card {
-      min-width: 30rem;
-      scroll-snap-align: start;
-    }
+    .portfolio-scroll::-webkit-scrollbar {display: none;}
+    .portfolio-scroll .portfolio-grid {display: flex; min-width: min-content; gap: 2rem;}
+    .portfolio-scroll .portfolio-card {min-width: 30rem; scroll-snap-align: start;}
 
     /* Animated border */
-    .animated-border {
-      position: relative;
-      border-radius: 1.5rem;
-      overflow: hidden;
-    }
-
+    .animated-border {position: relative; border-radius: 1.5rem; overflow: hidden;}
     .animated-border::before {
       content: '';
       position: absolute;
@@ -677,23 +282,48 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
+      background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
       z-index: -1;
       animation: borderAnimation 6s linear infinite;
       background-size: 400%;
       border-radius: 1.7rem;
     }
-
     @keyframes borderAnimation {
-      0% {
-        background-position: 0% 50%;
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      html {font-size: 55%;}
+      .about-content {grid-template-columns: 1fr; text-align: center;}
+      .about-img-container {order: -1;}
+    }
+    @media (max-width: 768px) {
+      html {font-size: 50%;}
+      .mobile-menu-btn {display: block;}
+      .nav-list {
+        position: fixed;
+        top: 7rem;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        padding: 2rem 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
       }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      .nav-list.active {transform: translateY(0); opacity: 1; pointer-events: all;}
+    }
+    @media (max-width: 576px) {
+      .hero-content {text-align: center; padding: 0 2rem;}
+      .social-links {justify-content: center;}
+      .portfolio-grid {grid-template-columns: 1fr;}
     }
   </style>
 </head>
@@ -759,9 +389,7 @@
             <div class="portfolio-content">
               <h3 class="portfolio-title">Rust & Roots</h3>
               <p class="portfolio-subtitle">Strategic Top-Down Shooter</p>
-              <p class="portfolio-desc">
-                Dark, strategic top-down shooter with intelligent enemy AI, drone mechanics, and seamless UI/UX features.
-              </p>
+              <p class="portfolio-desc">Dark, strategic top-down shooter with intelligent enemy AI, drone mechanics, and seamless UI/UX features.</p>
               <div class="skills-container">
                 <span class="skill-tag">Unity</span>
                 <span class="skill-tag">C#</span>
@@ -785,9 +413,7 @@
             <div class="portfolio-content">
               <h3 class="portfolio-title">Evil Magic Arena</h3>
               <p class="portfolio-subtitle">2D Multiplayer Game</p>
-              <p class="portfolio-desc">
-                2D multiplayer game with AWS integration, user systems, and interactive social features.
-              </p>
+              <p class="portfolio-desc">2D multiplayer game with AWS integration, user systems, and interactive social features.</p>
               <div class="skills-container">
                 <span class="skill-tag">Unity</span>
                 <span class="skill-tag">C#</span>
@@ -811,9 +437,7 @@
             <div class="portfolio-content">
               <h3 class="portfolio-title">Revenge: The Dagger</h3>
               <p class="portfolio-subtitle">Side Scroller Action Adventure</p>
-              <p class="portfolio-desc">
-                Thesis project with interactive environments, traps, puzzles, and narrative elements.
-              </p>
+              <p class="portfolio-desc">Thesis project with interactive environments, traps, puzzles, and narrative elements.</p>
               <div class="skills-container">
                 <span class="skill-tag">Unreal</span>
                 <span class="skill-tag">C++</span>
@@ -832,7 +456,7 @@
       
       <!-- Regular Grid for All Projects -->
       <div class="portfolio-grid">
-        <!-- Project 4 - Toys Brawl -->
+        <!-- Projects 4-8 -->
         <div class="portfolio-card fade-in">
           <div class="portfolio-img-container">
             <img src="./images/toys-brawl.jpg" class="portfolio-img" alt="Toys Brawl">
@@ -841,24 +465,16 @@
           <div class="portfolio-content">
             <h3 class="portfolio-title">Toys Brawl</h3>
             <p class="portfolio-subtitle">3D Co-op Physics Shooter</p>
-            <p class="portfolio-desc">
-              Local co-op game with ragdoll physics, weapon systems, and player upgrades.
-            </p>
+            <p class="portfolio-desc">Local co-op game with ragdoll physics, weapon systems, and player upgrades.</p>
             <div class="skills-container">
               <span class="skill-tag">Unity</span>
               <span class="skill-tag">C#</span>
               <span class="skill-tag">Physics</span>
             </div>
-            <a href="https://store.playstation.com/en-tr/concept/10012882/" class="portfolio-link" target="_blank">
-              PlayStation Store
-              <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
-              </svg>
-            </a>
+            <a href="https://store.playstation.com/en-tr/concept/10012882/" class="portfolio-link" target="_blank">PlayStation Store</a>
           </div>
         </div>
 
-        <!-- Project 5 - Tiny Siege -->
         <div class="portfolio-card fade-in">
           <div class="portfolio-img-container">
             <img src="./images/tiny-siege.jpg" class="portfolio-img" alt="Tiny Siege">
@@ -866,809 +482,304 @@
           </div>
           <div class="portfolio-content">
             <h3 class="portfolio-title">Tiny Siege</h3>
-              <p class="portfolio-subtitle">2D RTS Mobile Game</p>
-              <p class="portfolio-desc">
-                Rapid development project with SOLID principles and mobile optimization.
-              </p>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">SOLID</span>
-              </div>
-              <a href="https://play.unity.com/en/games/b148d828-951a-4a49-b6a5-adbd6510f110/webgl2" class="portfolio-link" target="_blank">
-                Play on Unity Play
-                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
-                </svg>
-              </a>
+            <p class="portfolio-subtitle">2D RTS Mobile Game</p>
+            <p class="portfolio-desc">Rapid development project with SOLID principles and mobile optimization.</p>
+            <div class="skills-container">
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">SOLID</span>
             </div>
+            <a href="https://play.unity.com/en/games/b148d828-951a-4a49-b6a5-adbd6510f110/webgl2" class="portfolio-link" target="_blank">Play on Unity Play</a>
           </div>
-  
-          <!-- Project 6 - Shahmaran -->
-          <div class="portfolio-card fade-in">
-            <div class="portfolio-img-container">
-              <img src="./images/shahmaran.jpg" class="portfolio-img" alt="Shahmaran Game">
-              <img src="./images/shahmaran.gif" class="portfolio-img portfolio-img-overlay" alt="Shahmaran Game Animation">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Shahmaran</h3>
-              <p class="portfolio-subtitle">Hyper-casual Action Game</p>
-              <p class="portfolio-desc">
-                Developed at AnkA Interactive with focus on mobile optimization and cross-platform support.
-              </p>
-              <div class="skills-container">
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Unreal</span>
-                <span class="skill-tag">Mobile</span>
-              </div>
-              <a href="https://store.steampowered.com/app/3061480/Shahmaran/" class="portfolio-link" target="_blank">
-                Steam Page
-                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
-                </svg>
-              </a>
-            </div>
+        </div>
+
+        <div class="portfolio-card fade-in">
+          <div class="portfolio-img-container">
+            <img src="./images/shahmaran.jpg" class="portfolio-img" alt="Shahmaran Game">
+            <img src="./images/shahmaran.gif" class="portfolio-img portfolio-img-overlay" alt="Shahmaran Game Animation">
           </div>
-  
-          <!-- Project 7 - Catpocalypse -->
-          <div class="portfolio-card fade-in">
-            <div class="portfolio-img-container">
-              <img src="./images/catpocalypse1.jpg" class="portfolio-img" alt="Catpocalypse">
-              <img src="./images/catpocalypse1.gif" class="portfolio-img portfolio-img-overlay" alt="Catpocalypse Animation">
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Shahmaran</h3>
+            <p class="portfolio-subtitle">Hyper-casual Action Game</p>
+            <p class="portfolio-desc">Developed at AnkA Interactive with focus on mobile optimization and cross-platform support.</p>
+            <div class="skills-container">
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Unreal</span>
+              <span class="skill-tag">Mobile</span>
             </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Catpocalypse</h3>
-              <p class="portfolio-subtitle">Mobile Hyper-casual Game</p>
-              <p class="portfolio-desc">
-                Rogue-lite mechanics with endless loop structure and unique assets.
-              </p>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">Mobile</span>
-              </div>
-              <a href="https://hbrahimozdemir.itch.io/catpocalypse" class="portfolio-link" target="_blank">
-                Play on Itch.io
-                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
-                </svg>
-              </a>
-            </div>
+            <a href="https://store.steampowered.com/app/3061480/Shahmaran/" class="portfolio-link" target="_blank">Steam Page</a>
           </div>
-  
-          <!-- Project 8 - Ekocin -->
-          <div class="portfolio-card fade-in">
-            <div class="portfolio-img-container">
-              <img src="./images/ekocin.jpg" class="portfolio-img" alt="Ekocin">
-              <img src="./images/ekocin.gif" class="portfolio-img portfolio-img-overlay" alt="Ekocin Animation">
+        </div>
+
+        <div class="portfolio-card fade-in">
+          <div class="portfolio-img-container">
+            <img src="./images/catpocalypse1.jpg" class="portfolio-img" alt="Catpocalypse">
+            <img src="./images/catpocalypse1.gif" class="portfolio-img portfolio-img-overlay" alt="Catpocalypse Animation">
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Catpocalypse</h3>
+            <p class="portfolio-subtitle">Mobile Hyper-casual Game</p>
+            <p class="portfolio-desc">Rogue-lite mechanics with endless loop structure and unique assets.</p>
+            <div class="skills-container">
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">Mobile</span>
             </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Ekocin</h3>
-              <p class="portfolio-subtitle">Educational Environmental Game</p>
-              <p class="portfolio-desc">
-                TÜBİTAK project with MongoDB integration for student progress tracking.
-              </p>
-              <div class="skills-container">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">MongoDB</span>
-              </div>
-              <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" class="portfolio-link" target="_blank">
-                Play on Unity Play
-                <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
-                </svg>
-              </a>
+            <a href="https://hbrahimozdemir.itch.io/catpocalypse" class="portfolio-link" target="_blank">Play on Itch.io</a>
+          </div>
+        </div>
+
+        <div class="portfolio-card fade-in">
+          <div class="portfolio-img-container">
+            <img src="./images/ekocin.jpg" class="portfolio-img" alt="Ekocin">
+            <img src="./images/ekocin.gif" class="portfolio-img portfolio-img-overlay" alt="Ekocin Animation">
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Ekocin</h3>
+            <p class="portfolio-subtitle">Educational Environmental Game</p>
+            <p class="portfolio-desc">
+              TÜBİTAK project with MongoDB integration for student progress tracking.
+            </p>
+            <div class="skills-container">
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">MongoDB</span>
             </div>
+            <a href="https://play.unity.com/en/games/0abaa4d2-f207-4087-bda0-e33be5588cb6/ekosin" class="portfolio-link" target="_blank">
+              Play on Unity Play
+              <svg class="portfolio-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M7 17l10-5-10-5v10z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-    </section>
-  
-    <!-- Companies Section -->
-    <section class="companies" id="companies">
-      <div class="container">
-        <h2>Companies I've <span class="text-accent">Worked For</span></h2>
-        <div class="companies-grid">
-          <div class="company-card fade-in">
-            <img src="./images/welfish.png" class="company-logo" alt="Welfish Studio">
-            <h3 class="company-name">Welfish Studio</h3>
-            <p>Game Development</p>
-          </div>
-          <div class="company-card fade-in">
-            <img src="./images/anka.png" class="company-logo" alt="AnkA Interactive">
-            <h3 class="company-name">AnkA Interactive</h3>
-            <p>C++ Development</p>
-          </div>
+    </div>
+  </section>
+
+  <!-- Companies Section -->
+  <section class="companies" id="companies">
+    <div class="container">
+      <h2>Companies I've <span class="text-accent">Worked For</span></h2>
+      <div class="companies-grid">
+        <div class="company-card fade-in">
+          <img src="./images/welfish.png" class="company-logo" alt="Welfish Studio">
+          <h3 class="company-name">Welfish Studio</h3>
+          <p>Game Development</p>
+        </div>
+        <div class="company-card fade-in">
+          <img src="./images/anka.png" class="company-logo" alt="AnkA Interactive">
+          <h3 class="company-name">AnkA Interactive</h3>
+          <p>C++ Development</p>
         </div>
       </div>
-    </section>
-  
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="container">
-        <h2>About <span class="text-accent">Me</span></h2>
-        <div class="about-content">
-          <div class="about-text fade-in">
-            <p>
-              Born in Samsun, I've always been passionate about games and technology. As a <span class="text-highlight">gamer, developer, and athlete</span>, I strive for constant self-improvement. I'm also curious about fields like history, geography, and science.
-            </p>
-            <p>
-              Game development is my creative and analytical outlet. I started with <span class="text-accent">Godot</span> and now primarily use <span class="text-accent">Unreal Engine</span>, with strong experience in <span class="text-accent">Unity</span> as well. I focus on applying <span class="text-highlight">SOLID principles and object-oriented programming</span> throughout my work.
-            </p>
-            <p>
-              My professional journey includes academic projects like <em>Revenge: The Dagger</em>, commercial work at <span class="text-accent">AnkA Interactive</span> on <em>Shahmaran</em>, and development with AI systems at <span class="text-accent">Welfish Studio</span>.
-            </p>
-            <a href="./files/umit-numan-duman-resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
-          </div>
-          
-          <div class="about-img-container fade-in">
-            <img class="about-img" src="./images/umit-numan-duman.png" alt="Ümit Numan Duman">
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2>Get in <span class="text-accent">Touch</span></h2>
-        <div class="contact-content fade-in">
-          <p class="contact-text">
-            Have a project in mind or looking for a game developer? I'm always open to new opportunities and collaborations! Feel free to reach out — let's create something amazing together.
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About <span class="text-accent">Me</span></h2>
+      <div class="about-content">
+        <div class="about-text fade-in">
+          <p>
+            Born in Samsun, I've always been passionate about games and technology. As a <span class="text-highlight">gamer, developer, and athlete</span>, I strive for constant self-improvement. I'm also curious about fields like history, geography, and science.
           </p>
-          <a href="mailto:numand09@gmail.com" class="btn btn-secondary">numand09@gmail.com</a>
+          <p>
+            Game development is my creative and analytical outlet. I started with <span class="text-accent">Godot</span> and now primarily use <span class="text-accent">Unreal Engine</span>, with strong experience in <span class="text-accent">Unity</span> as well. I focus on applying <span class="text-highlight">SOLID principles and object-oriented programming</span> throughout my work.
+          </p>
+          <p>
+            My professional journey includes academic projects like <em>Revenge: The Dagger</em>, commercial work at <span class="text-accent">AnkA Interactive</span> on <em>Shahmaran</em>, and development with AI systems at <span class="text-accent">Welfish Studio</span>.
+          </p>
+          <a href="./files/umit-numan-duman-resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+        </div>
+        
+        <div class="about-img-container fade-in">
+          <img class="about-img" src="./images/umit-numan-duman.png" alt="Ümit Numan Duman">
         </div>
       </div>
-    </section>
-  
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-social">
-          <a href="https://github.com/numand09" target="_blank" class="social-link">
-            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" target="_blank" class="social-link">
-            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-          </a>
-        </div>
-        <p>&copy; <span id="year"></span> <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" class="footer-link">Ümit Numan Duman</a>. All rights reserved.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Get in <span class="text-accent">Touch</span></h2>
+      <div class="contact-content fade-in">
+        <p class="contact-text">
+          Have a project in mind or looking for a game developer? I'm always open to new opportunities and collaborations! Feel free to reach out — let's create something amazing together.
+        </p>
+        <a href="mailto:numand09@gmail.com" class="btn btn-secondary">numand09@gmail.com</a>
       </div>
-      
-      <a href="#home" class="back-to-top" id="back-to-top">
-        <svg class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-        </svg>
-      </a>
-    </footer>
-  
-    <script>
-      // Update copyright year
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // Mobile menu toggle
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const navList = document.querySelector('.nav-list');
-      
-      mobileMenuBtn.addEventListener('click', () => {
-        navList.classList.toggle('active');
-      });
-      
-      // Close mobile menu when clicking a nav link
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          navList.classList.remove('active');
-        });
-      });
-      
-      // Back to top button
-      const backToTopBtn = document.getElementById('back-to-top');
-      
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backToTopBtn.classList.add('visible');
-        } else {
-          backToTopBtn.classList.remove('visible');
-        }
-      });
-      
-      // Navbar scroll effect
-      const navbar = document.querySelector('.navbar');
-      
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
-      
-      // Particles animation
-      function createParticles() {
-        const particlesContainer = document.getElementById('particles');
-        const colors = ['#6A4DFF', '#FF4D94', '#4DFFE1'];
-        
-        for (let i = 0; i < 30; i++) {
-          const particle = document.createElement('div');
-          particle.classList.add('particle');
-          
-          // Randomize particle properties
-          const size = Math.random() * 15 + 5;
-          const color = colors[Math.floor(Math.random() * colors.length)];
-          const left = Math.random() * 100;
-          const delay = Math.random() * 15;
-          const duration = Math.random() * 10 + 10;
-          
-          particle.style.width = `${size}px`;
-          particle.style.height = `${size}px`;
-          particle.style.backgroundColor = color;
-          particle.style.left = `${left}%`;
-          particle.style.bottom = '-20px';
-          particle.style.animationDelay = `${delay}s`;
-          particle.style.animationDuration = `${duration}s`;
-          
-          particlesContainer.appendChild(particle);
-        }
-      }
-      
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const target = document.querySelector(this.getAttribute('href'));
-          
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 70,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-      
-      // Scroll animation for elements
-      function animateOnScroll() {
-        const elements = document.querySelectorAll('.fade-in');
-        
-        elements.forEach(element => {
-          const elementTop = element.getBoundingClientRect().top;
-          const windowHeight = window.innerHeight;
-          
-          if (elementTop < windowHeight - 100) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-          }
-        });
-      }
-      
-      // Mobile touch support for showing GIFs
-      function handleMobileGifHover() {
-        const imgContainers = document.querySelectorAll('.portfolio-img-container');
-        
-        imgContainers.forEach(container => {
-          container.addEventListener('touchstart', function() {
-            const overlay = this.querySelector('.portfolio-img-overlay');
-            if (overlay) {
-              overlay.style.opacity = '1';
-            }
-          }, { passive: true });
-          
-          container.addEventListener('touchend', function() {
-            const overlay = this.querySelector('.portfolio-img-overlay');
-            if (overlay) {
-              setTimeout(() => {
-                overlay.style.opacity = '0';
-              }, 1500);
-            }
-          }, { passive: true });
-        });
-      }
-      
-      // Initialize all functions on page load
-      window.addEventListener('DOMContentLoaded', () => {
-        createParticles();
-        handleMobileGifHover();
-        
-        // Set initial state for elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-          el.style.opacity = '0';
-          el.style.transform = 'translateY(20px)';
-          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        // Run animation for visible elements
-        animateOnScroll();
-      });
-      
-      // Trigger scroll animations when scrolling
-      window.addEventListener('scroll', animateOnScroll);
-    </script>
-  </body>
-  </html>
+    </div>
+  </section>
 
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/umit-numan-duman.png" />
-  <title>Ümit Numan Duman | Game Developer</title>
-  <meta name="description" content="Computer Engineer | Game Developer">
-  <meta name="keywords" content="C, C++, C#, Unreal Engine, Blueprint, Unity, Game Development, Godot" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <style>
-    /* Önceki stil kodları korundu */
-    :root {
-      --primary-color: #6A4DFF;
-      --secondary-color: #FF4D94;
-      --accent-color: #4DFFE1;
-      --dark-bg: #1A1A2E;
-      --light-bg: #f5f5f7;
-      --text-color: #16213E;
-      --light-text: #ffffff;
-      --card-bg: #ffffff;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      --gradient-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      --skill-gradient: linear-gradient(135deg, #6A4DFF, #4DFFE1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 62.5%;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--light-bg);
-      overflow-x: hidden;
-    }
-
-    /* Snake Oyun Paneli Stilleri */
-    .snake-game-container {
-      position: fixed;
-      right: 2rem;
-      bottom: 8rem;
-      width: 22rem;
-      z-index: 900;
-      border-radius: 1.2rem;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-      background: var(--dark-bg);
-      overflow: hidden;
-      transition: all 0.3s ease;
-      transform: translateX(calc(100% - 4rem));
-    }
-
-    .snake-game-container:hover,
-    .snake-game-container.active {
-      transform: translateX(0);
-    }
-
-    .snake-game-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      background: var(--gradient-bg);
-      color: var(--light-text);
-    }
-
-    .snake-game-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .snake-game-score {
-      font-size: 1.4rem;
-      font-weight: 500;
-    }
-
-    .snake-game-canvas {
-      display: block;
-      background-color: #0C0C1D;
-      border-bottom-left-radius: 1.2rem;
-      border-bottom-right-radius: 1.2rem;
-    }
-
-    .snake-toggle {
-      position: absolute;
-      left: -1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 3rem;
-      height: 5rem;
-      background: var(--primary-color);
-      border-radius: 1rem 0 0 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      color: white;
-      box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .snake-icon {
-      width: 1.8rem;
-      height: 1.8rem;
-    }
-
-    .snake-controls {
-      padding: 1rem;
-      text-align: center;
-      color: var(--light-text);
-      font-size: 1.2rem;
-      background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    .snake-controls span {
-      color: var(--accent-color);
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      .snake-game-container {
-        bottom: 6rem;
-        width: 18rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Önceki içerik korundu -->
-  
-  <!-- Snake Oyunu Paneli -->
-  <div class="snake-game-container" id="snakeGameContainer">
-    <div class="snake-toggle" id="snakeToggle">
-      <svg class="snake-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M20 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8-1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-8-1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm13.96-6.3C15.63 1.59 3.77 4.14 2.19 5.31a.5.5 0 0 0 0 .76c4.57 3.32 7.83 7.4 9.36 11.77.12.33.48.47.74.29 0 0 2.63-1.86 4.59-5.17 2.21-3.71 5.76-3.28 5.76-3.28.35 0 .54-.42.32-.71-2.3-3.28-7.58-5.91-7-5.27z"/>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-social">
+        <a href="https://github.com/numand09" target="_blank" class="social-link">
+          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" target="_blank" class="social-link">
+          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </div>
+      <p>&copy; <span id="year"></span> <a href="https://www.linkedin.com/in/ümit-numan-duman-bb7176228/" class="footer-link">Ümit Numan Duman</a>. All rights reserved.</p>
+    </div>
+    
+    <a href="#home" class="back-to-top" id="back-to-top">
+      <svg class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
       </svg>
-    </div>
-    <div class="snake-game-header">
-      <div class="snake-game-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.1 17.25C12.3 17.25 12.5 17.15 12.6 17.05L18.1 11.55C18.3 11.35 18.3 11.05 18.1 10.85L12.6 5.35C12.4 5.15 12.2 5.15 12 5.15C11.3 5.15 10.9 5.95 11.3 6.45L16 11.15L11.3 15.85C11.1 16.05 11 16.25 11 16.45C11 16.95 11.5 17.25 12.1 17.25Z" fill="currentColor"/>
-          <path d="M6.1 17.25C6.3 17.25 6.5 17.15 6.6 17.05L12.1 11.55C12.3 11.35 12.3 11.05 12.1 10.85L6.6 5.35C6.4 5.15 6.2 5.15 6 5.15C5.3 5.15 4.9 5.95 5.3 6.45L10 11.15L5.3 15.85C5.1 16.05 5 16.25 5 16.45C5 16.95 5.5 17.25 6.1 17.25Z" fill="currentColor"/>
-        </svg>
-        Snake
-      </div>
-      <div class="snake-game-score">Skor: <span id="score">0</span></div>
-    </div>
-    <canvas id="snakeCanvas" class="snake-game-canvas" width="220" height="220"></canvas>
-    <div class="snake-controls">
-      Kontroller: <span>↑ ↓ ← →</span> veya <span>W A S D</span>
-    </div>
-  </div>
+    </a>
+  </footer>
 
   <script>
-    // Önceki script kodları korundu
+    // Update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
     
-    // Snake Oyunu
-    window.addEventListener('DOMContentLoaded', function() {
-      // Snake Oyun Kodu
-      const canvas = document.getElementById('snakeCanvas');
-      const ctx = canvas.getContext('2d');
-      const snakeToggle = document.getElementById('snakeToggle');
-      const snakeContainer = document.getElementById('snakeGameContainer');
-      const scoreElement = document.getElementById('score');
-      
-      // Toggle fonksiyonu
-      snakeToggle.addEventListener('click', function() {
-        snakeContainer.classList.toggle('active');
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navList = document.querySelector('.nav-list');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking a nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
       });
-      
-      // Oyun değişkenleri
-      const gridSize = 10;
-      const gridWidth = canvas.width / gridSize;
-      const gridHeight = canvas.height / gridSize;
-      
-      let snake = [
-        {x: 10, y: 10},
-        {x: 9, y: 10},
-        {x: 8, y: 10}
-      ];
-      
-      let food = {
-        x: Math.floor(Math.random() * gridWidth),
-        y: Math.floor(Math.random() * gridHeight)
-      };
-      
-      let direction = 'right';
-      let nextDirection = 'right';
-      let score = 0;
-      let gameActive = false;
-      let gameSpeed = 100;
-      let gameLoop;
-      
-      // Oyun başlatma mesajı
-      function showStartMessage() {
-        ctx.fillStyle = '#0C0C1D';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.fillStyle = '#4DFFE1';
-        ctx.font = '14px Poppins';
-        ctx.textAlign = 'center';
-        ctx.fillText('Başlamak için bir yön', canvas.width/2, canvas.height/2 - 10);
-        ctx.fillText('tuşuna basın', canvas.width/2, canvas.height/2 + 10);
+    });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
       }
-      
-      // Oyun sonu mesajı
-      function showGameOverMessage() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.fillStyle = '#FF4D94';
-        ctx.font = 'bold 16px Poppins';
-        ctx.textAlign = 'center';
-        ctx.fillText('Oyun Bitti!', canvas.width/2, canvas.height/2 - 15);
-        
-        ctx.fillStyle = '#FFFFFF';
-        ctx.font = '14px Poppins';
-        ctx.fillText(`Skor: ${score}`, canvas.width/2, canvas.height/2 + 10);
-        
-        ctx.font = '12px Poppins';
-        ctx.fillText('Tekrar başlamak için', canvas.width/2, canvas.height/2 + 35);
-        ctx.fillText('bir yön tuşuna basın', canvas.width/2, canvas.height/2 + 55);
+    });
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
+    });
+    
+    // Particles animation
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const colors = ['#6A4DFF', '#FF4D94', '#4DFFE1'];
       
-      // Oyunu sıfırla
-      function resetGame() {
-        snake = [
-          {x: 10, y: 10},
-          {x: 9, y: 10},
-          {x: 8, y: 10}
-        ];
-        direction = 'right';
-        nextDirection = 'right';
-        score = 0;
-        scoreElement.textContent = score;
-        placeFood();
+      for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
         
-        if (gameLoop) {
-          clearInterval(gameLoop);
-        }
+        // Randomize particle properties
+        const size = Math.random() * 15 + 5;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const left = Math.random() * 100;
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 10 + 10;
         
-        gameLoop = setInterval(gameStep, gameSpeed);
-        gameActive = true;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.backgroundColor = color;
+        particle.style.left = `${left}%`;
+        particle.style.bottom = '-20px';
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        
+        particlesContainer.appendChild(particle);
       }
-      
-      // Yiyecek yerleştirme
-      function placeFood() {
-        // Yiyeceğin yılanın üzerinde olmamasını sağla
-        let validPosition = false;
-        let newFood;
-        
-        while (!validPosition) {
-          newFood = {
-            x: Math.floor(Math.random() * gridWidth),
-            y: Math.floor(Math.random() * gridHeight)
-          };
-          
-          validPosition = true;
-          for (let segment of snake) {
-            if (segment.x === newFood.x && segment.y === newFood.y) {
-              validPosition = false;
-              break;
-            }
-          }
-        }
-        
-        food = newFood;
-      }
-      
-      // Oyun mantığı
-      function gameStep() {
-        // Yönü güncelle
-        direction = nextDirection;
-        
-        // Yılanın başının yeni pozisyonunu hesapla
-        const head = {x: snake[0].x, y: snake[0].y};
-        
-        switch(direction) {
-          case 'up':
-            head.y--;
-            break;
-          case 'down':
-            head.y++;
-            break;
-          case 'left':
-            head.x--;
-            break;
-          case 'right':
-            head.x++;
-            break;
-        }
-        
-        // Duvara çarpma kontrolü
-        if (head.x < 0 || head.x >= gridWidth || head.y < 0 || head.y >= gridHeight) {
-          gameOver();
-          return;
-        }
-        
-        // Kendine çarpma kontrolü
-        for (let i = 0; i < snake.length; i++) {
-          if (snake[i].x === head.x && snake[i].y === head.y) {
-            gameOver();
-            return;
-          }
-        }
-        
-        // Yılanın başını güncelle
-        snake.unshift(head);
-        
-        // Yemeği yeme kontrolü
-        if (head.x === food.x && head.y === food.y) {
-          score += 10;
-          scoreElement.textContent = score;
-          placeFood();
-          
-          // Hızı arttır (belirli bir limite kadar)
-          if (gameSpeed > 50 && score % 50 === 0) {
-            gameSpeed -= 5;
-            clearInterval(gameLoop);
-            gameLoop = setInterval(gameStep, gameSpeed);
-          }
-        } else {
-          // Yemeği yemediyse kuyruğunu kısalt
-          snake.pop();
-        }
-        
-        // Oyun alanını çiz
-        draw();
-      }
-      
-      // Oyun sonu
-      function gameOver() {
-        gameActive = false;
-        clearInterval(gameLoop);
-        showGameOverMessage();
-      }
-      
-      // Çizim fonksiyonu
-      function draw() {
-        // Arka planı temizle
-        ctx.fillStyle = '#0C0C1D';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        // Yılanı çiz
-        snake.forEach((segment, index) => {
-          // Başı farklı renk yap
-          if (index === 0) {
-            ctx.fillStyle = '#FF4D94';
-          } else {
-            // Gradient yılan vücudu
-            const colorPos = index / snake.length;
-            ctx.fillStyle = `hsl(${260 + colorPos * 60}, 100%, 65%)`;
-          }
-          
-          ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 1, gridSize - 1);
-        });
-        
-        // Yemeği çiz
-        ctx.fillStyle = '#4DFFE1';
-        ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 1, gridSize - 1);
-      }
-      
-      // Klavye kontrolleri
-      window.addEventListener('keydown', function(e) {
-        if (!gameActive) {
-          if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'w', 'a', 's', 'd', 'W', 'A', 'S', 'D'].includes(e.key)) {
-            resetGame();
-          }
-          return;
-        }
-        
-        switch(e.key) {
-          case 'ArrowUp':
-          case 'w':
-          case 'W':
-            if (direction !== 'down') nextDirection = 'up';
-            break;
-          case 'ArrowDown':
-          case 's':
-          case 'S':
-            if (direction !== 'up') nextDirection = 'down';
-            break;
-          case 'ArrowLeft':
-          case 'a':
-          case 'A':
-            if (direction !== 'right') nextDirection = 'left';
-            break;
-          case 'ArrowRight':
-          case 'd':
-          case 'D':
-            if (direction !== 'left') nextDirection = 'right';
-            break;
-        }
-      });
-      
-      // Dokunmatik kontroller için
-      let touchStartX = 0;
-      let touchStartY = 0;
-      
-      canvas.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         
-        if (!gameActive) {
-          resetGame();
-        }
-      }, { passive: false });
-      
-      canvas.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-      }, { passive: false });
-      
-      canvas.addEventListener('touchend', function(e) {
-        const touchEndX = e.changedTouches[0].screenX;
-        const touchEndY = e.changedTouches[0].screenY;
+        const target = document.querySelector(this.getAttribute('href'));
         
-        const diffX = touchEndX - touchStartX;
-        const diffY = touchEndY - touchStartY;
-        
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-          // Yatay kaydırma
-          if (diffX > 0 && direction !== 'left') {
-            nextDirection = 'right';
-          } else if (diffX < 0 && direction !== 'right') {
-            nextDirection = 'left';
-          }
-        } else {
-          // Dikey kaydırma
-          if (diffY > 0 && direction !== 'up') {
-            nextDirection = 'down';
-          } else if (diffY < 0 && direction !== 'down') {
-            nextDirection = 'up';
-          }
-        }
-        
-        e.preventDefault();
-      }, { passive: false });
-      
-      // İlk mesajı göster
-      showStartMessage();
-      
-      // Otomatik oyun başlatma
-      canvas.addEventListener('click', function() {
-        if (!gameActive) {
-          resetGame();
-        }
-      });
-      
-      // Odak kaybı kontrolü
-      window.addEventListener('blur', function() {
-        if (gameActive) {
-          clearInterval(gameLoop);
-        }
-      });
-      
-      window.addEventListener('focus', function() {
-        if (gameActive) {
-          gameLoop = setInterval(gameStep, gameSpeed);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: 'smooth'
+          });
         }
       });
     });
+    
+    // Scroll animation for elements
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    
+    // Mobile touch support for showing GIFs
+    function handleMobileGifHover() {
+      const imgContainers = document.querySelectorAll('.portfolio-img-container');
+      
+      imgContainers.forEach(container => {
+        container.addEventListener('touchstart', function() {
+          const overlay = this.querySelector('.portfolio-img-overlay');
+          if (overlay) {
+            overlay.style.opacity = '1';
+          }
+        }, { passive: true });
+        
+        container.addEventListener('touchend', function() {
+          const overlay = this.querySelector('.portfolio-img-overlay');
+          if (overlay) {
+            setTimeout(() => {
+              overlay.style.opacity = '0';
+            }, 1500);
+          }
+        }, { passive: true });
+      });
+    }
+    
+    // Initialize all functions on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      handleMobileGifHover();
+      
+      // Set initial state for elements
+      document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+      
+      // Run animation for visible elements
+      animateOnScroll();
+    });
+    
+    // Trigger scroll animations when scrolling
+    window.addEventListener('scroll', animateOnScroll);
   </script>
 </body>
 </html>
